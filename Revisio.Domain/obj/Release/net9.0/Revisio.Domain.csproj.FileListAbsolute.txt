@@ -1,0 +1,12 @@
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\bin\Release\net9.0\Revisio.Domain.deps.json
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\bin\Release\net9.0\Revisio.Domain.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\bin\Release\net9.0\Revisio.Domain.pdb
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.csproj.AssemblyReference.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.AssemblyInfoInputs.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.AssemblyInfo.cs
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\refint\Revisio.Domain.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.pdb
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\ref\Revisio.Domain.dll

@@ -1,0 +1,2 @@
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\wwwroot\Templets\ConfirmationEmail.html
+wwwroot\Templets\ConfirmationEmail.html
