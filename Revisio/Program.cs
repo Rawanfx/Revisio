@@ -40,6 +40,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
     option.SignIn.RequireConfirmedEmail = true;
 }).AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
 
 var app = builder.Build();
 

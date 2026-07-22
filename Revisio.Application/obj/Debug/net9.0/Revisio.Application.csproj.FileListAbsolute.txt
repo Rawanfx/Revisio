@@ -13,3 +13,4 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Debug\net9.0
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Debug\net9.0\refint\Revisio.Application.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Debug\net9.0\Revisio.Application.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Debug\net9.0\ref\Revisio.Application.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Debug\net9.0\Revisio.Application.sourcelink.json

@@ -46,7 +46,7 @@ namespace Revisio.Application.Auth.Command.Register
             var baseUrl = configuration["AppUrl"];
             //send confirmation token to email
             var confirmationLink = $"{baseUrl}/api/Auth/confirm-email?email={user.Email}&token={encodedToken}";
-            await mailService.SendConfirmationEmail ("ConfirmationEmail.html", "{confirm-email}", confirmationLink, user.Email);
+            await mailService.SendConfirmationEmail ("ConfirmationEmail.html", "confirm-email", confirmationLink, user.Email);
            
             return new Response<RegisterResponseDto>() {Success=true,Message ="Check your email" };
         }

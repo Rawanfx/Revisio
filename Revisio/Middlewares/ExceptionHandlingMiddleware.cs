@@ -6,7 +6,7 @@ namespace Revisio.API.Middlewares
     public class ExceptionHandlingMiddleware:IMiddleware
     {
 
-        public  ExceptionHandlingMiddleware(RequestDelegate next) { }
+        public  ExceptionHandlingMiddleware() { }
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {

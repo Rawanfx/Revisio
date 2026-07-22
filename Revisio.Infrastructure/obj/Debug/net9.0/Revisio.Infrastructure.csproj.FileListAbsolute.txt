@@ -17,3 +17,4 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\ref\Revisio.Infrastructure.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Infrastructure.runtimeconfig.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.genruntimeconfig.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.sourcelink.json
