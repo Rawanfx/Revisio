@@ -10,3 +10,4 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Debug\net9.0\refi
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Debug\net9.0\Revisio.Domain.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Debug\net9.0\ref\Revisio.Domain.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Debug\net9.0\Revisio.Domain.csproj.AssemblyReference.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Debug\net9.0\Revisio.Domain.sourcelink.json

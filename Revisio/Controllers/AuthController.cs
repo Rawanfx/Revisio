@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Auth.Command.ConfirmEmail;
+using Revisio.Application.Auth.Command.Login;
 using Revisio.Application.Auth.Command.Register;
 using Revisio.Application.Auth.Command.ResendConfirmEmail;
 
@@ -29,6 +30,12 @@ namespace Revisio.API.Controllers
         }
         [HttpGet("resend-confirm-email")]
         public async Task<IActionResult> ResendConfirmEmail([FromQuery] ResendConfirmEmailCommand command)
+        {
+            var response = await _mediator.Send(command);
+            return Ok(response);
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginCommand command)
         {
             var response = await _mediator.Send(command);
             return Ok(response);

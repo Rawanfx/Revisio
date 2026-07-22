@@ -2,10 +2,7 @@
 {
     public class NotFoundException:Exception
     {
-        public string ErrorMessage { get; }
-        public NotFoundException(string error)
-        {
-            this.ErrorMessage = error;
-        }
+        public NotFoundException(string ErrorMessage) : base(ErrorMessage) { }
+       
     }
 }

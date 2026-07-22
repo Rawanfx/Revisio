@@ -5,7 +5,6 @@ using Revisio.Application.Common.Interfaces;
 using Revisio.Domain.Entities;
 using Revisio.Infrastructure.Settings;
 using System.IdentityModel.Tokens.Jwt;
-using System.Reflection.Metadata;
 using System.Security.Claims;
 using System.Text;
 
