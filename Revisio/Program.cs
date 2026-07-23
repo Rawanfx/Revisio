@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -79,6 +80,23 @@ builder.Services.AddCors(options =>
         policy.AllowAnyOrigin();
     });
 });
+builder.Services.AddRateLimiter(options => {
+    options.AddFixedWindowLimiter("fixed", w =>
+    {
+        w.QueueLimit = 0;
+        w.Window = TimeSpan.FromMinutes(1);
+        w.PermitLimit = 1;
+    });
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+        await context.HttpContext.Response.WriteAsJsonAsync(new
+        {
+            success = false,
+            message = "Too many requests. Please wait a moment before trying again."
+        }, cancellationToken);
+    };
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -89,8 +107,8 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseCors("Allow");
+app.UseRateLimiter();
+app.UseAuthentication(); 
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

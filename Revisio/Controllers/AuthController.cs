@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Revisio.Application.Auth.Command.ConfirmEmail;
 using Revisio.Application.Auth.Command.ForgetAndResetPassword;
 using Revisio.Application.Auth.Command.Login;
@@ -33,6 +34,7 @@ namespace Revisio.API.Controllers
             return Ok(response);
         }
         [HttpGet("resend-confirm-email")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> ResendConfirmEmail([FromQuery] ResendConfirmEmailCommand command)
         {
             var response = await _mediator.Send(command);
