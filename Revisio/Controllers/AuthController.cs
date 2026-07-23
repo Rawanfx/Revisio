@@ -1,10 +1,12 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Auth.Command.ConfirmEmail;
 using Revisio.Application.Auth.Command.ForgetAndResetPassword;
 using Revisio.Application.Auth.Command.Login;
 using Revisio.Application.Auth.Command.Register;
 using Revisio.Application.Auth.Command.ResendConfirmEmail;
+using Revisio.Domain.Entities;
 
 namespace Revisio.API.Controllers
 {
@@ -52,6 +54,12 @@ namespace Revisio.API.Controllers
         {
             var response = await _mediator.Send(command);
             return Ok(response);
+        }
+        [HttpGet("test")]
+        [Authorize(Roles = "Student")]
+        public IActionResult test()
+        {
+            return Ok();
         }
     }
 }

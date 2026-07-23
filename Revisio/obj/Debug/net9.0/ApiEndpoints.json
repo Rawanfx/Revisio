@@ -99,5 +99,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.AuthController",
+    "Method": "test",
+    "RelativePath": "api/Auth/test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

@@ -216,3 +216,5 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\runtimes\wi
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\compressed\794vlbs4h3-lbz1m4enb8.gz
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.sourcelink.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\compressed\b0ehjj8fzf-hv1k5qprph.gz
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\JWT.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Newtonsoft.Json.dll

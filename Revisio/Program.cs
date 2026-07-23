@@ -1,8 +1,11 @@
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Revisio.API.Middlewares;
 using Revisio.Application.Behaviors;
 using Revisio.Application.Common.Interfaces;
@@ -41,7 +44,25 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
 }).AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+JwtSetting jwtSetting = builder.Configuration.GetSection("Jwt").Get<JwtSetting>();
+//jwt
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>{
+    x.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateAudience=true,
+        ValidAudience = jwtSetting.Audience,
 
+        ValidateIssuer = true,
+        ValidIssuer=jwtSetting.Issuer,
+
+        ValidateIssuerSigningKey=true,
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtSetting.Key))
+    };
+});
 
 var app = builder.Build();
 
