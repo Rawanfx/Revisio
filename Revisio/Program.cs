@@ -1,6 +1,7 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +25,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("Jwt"));
 builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSetting"));
-builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppUrl"));
+builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppConfig"));
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 //Add mediatR
@@ -64,6 +65,20 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "DataProtectionKeys");
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))
+    .SetApplicationName("Revisio");
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Allow",policy =>
+    {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -73,7 +88,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
-
+app.UseCors("Allow");
 app.UseAuthorization();
 
 app.MapControllers();

@@ -10,3 +10,4 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Re
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\refint\Revisio.Domain.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\ref\Revisio.Domain.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Domain\obj\Release\net9.0\Revisio.Domain.sourcelink.json

@@ -8,6 +8,7 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Ou
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\FluentValidation.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\FluentValidation.AspNetCore.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\JWT.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MailKit.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MediatR.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MediatR.Contracts.dll
@@ -48,6 +49,7 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Ou
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Mime.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MimeKit.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MimeTypesMap.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Serilog.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Serilog.Sinks.File.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Serilog.Sinks.MSSqlServer.dll

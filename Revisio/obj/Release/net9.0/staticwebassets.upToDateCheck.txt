@@ -1,2 +1,4 @@
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\wwwroot\Templets\ConfirmationEmail.html
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\wwwroot\Templets\ResetPassword.html
 wwwroot\Templets\ConfirmationEmail.html
+wwwroot\Templets\ResetPassword.html
