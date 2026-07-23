@@ -30,10 +30,8 @@ namespace Revisio.Application.Auth.Command.ResendConfirmEmail
             {
                 var confirmationToken = await userManager.GenerateEmailConfirmationTokenAsync(user);
                 var encodedToken = Uri.EscapeDataString(confirmationToken);
-                var baseUrl = configuration["AppUrl"];
-                //send confirmation token to email
-                var confirmationLink = $"{baseUrl}/api/Auth/confirm-email?email={user.Email}&token={encodedToken}";
-                await mailService.SendConfirmationEmail("ConfirmationEmail.html", "confirm-email", confirmationLink, user.Email);
+              
+                await mailService.SendConfirmationEmail(  user.Email,encodedToken);
             }
             return new Response<string>() { Success = true, Message = "If this email is registered, a confirmation link has been sent" };
         }
