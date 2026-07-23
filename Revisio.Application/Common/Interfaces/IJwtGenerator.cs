@@ -5,5 +5,6 @@ namespace Revisio.Application.Common.Interfaces
     public interface IJwtGenerator
     {
         string GenerateJwtToken(ApplicationUser user);
+        string GenerateRefreshToken();
     }
 }

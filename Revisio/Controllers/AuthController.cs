@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Auth.Command.ConfirmEmail;
 using Revisio.Application.Auth.Command.ForgetAndResetPassword;
 using Revisio.Application.Auth.Command.Login;
+using Revisio.Application.Auth.Command.RefreshTokens;
 using Revisio.Application.Auth.Command.Register;
 using Revisio.Application.Auth.Command.ResendConfirmEmail;
 using Revisio.Domain.Entities;
@@ -56,10 +57,16 @@ namespace Revisio.API.Controllers
             return Ok(response);
         }
         [HttpGet("test")]
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "Instructor")]
         public IActionResult test()
         {
             return Ok();
+        }
+        [HttpPost("generate-access-token")]
+        public async Task<IActionResult> GenerateAccessToken([FromBody]RefreshTokenCommand command)
+        {
+            var response = await _mediator.Send(command);
+            return Ok(response);
         }
     }
 }

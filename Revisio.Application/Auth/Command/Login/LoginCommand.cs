@@ -4,4 +4,4 @@ using Revisio.Application.Common.Models;
 
 namespace Revisio.Application.Auth.Command.Login;
 
-public record LoginCommand(string Email,string Password):IRequest<Response<RegisterResponseDto>>;
+public record LoginCommand(string Email,string Password):IRequest<Response<LoginResponseDto>>;

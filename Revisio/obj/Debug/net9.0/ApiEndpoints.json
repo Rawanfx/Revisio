@@ -38,6 +38,22 @@
   },
   {
     "ContainingType": "Revisio.API.Controllers.AuthController",
+    "Method": "GenerateAccessToken",
+    "RelativePath": "api/Auth/generate-access-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Revisio.Application.Auth.Command.RefreshTokens.RefreshTokenCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
