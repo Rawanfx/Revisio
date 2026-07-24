@@ -85,9 +85,9 @@ namespace Revisio.Infrastructure.Services
             };
             var callBack = QueryHelpers.AddQueryString(clientUri, parm);
             string path = Path.Combine(webHostEnvironment.WebRootPath, "Templets", "ResetPassword.html");
-            string content = File.ReadAllText(path);
+            string content =await File.ReadAllTextAsync(path);
            string finalContent= content.Replace("resetPassword", callBack);
-            await SendEmailAsync(email, "Revisio", null, finalContent);
+            await SendEmailAsync(email, "Revisio - Reset password", null, finalContent);
         }
     }
 }
