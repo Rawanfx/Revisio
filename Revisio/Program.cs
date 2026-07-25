@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Revisio.API.Middlewares;
+using Revisio.API.Service;
 using Revisio.Application.Behaviors;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Domain.Entities;
@@ -70,6 +71,9 @@ var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))
     .SetApplicationName("Revisio");
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUserService, CurrentUser>();
 
 builder.Services.AddCors(options =>
 {

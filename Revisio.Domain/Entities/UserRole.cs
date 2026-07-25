@@ -4,7 +4,7 @@ namespace Revisio.Domain.Entities
 {
     public enum UserRole
     {
-        Student,
-        Instructor
+        Student =1,
+        Instructor=2
     }
 }

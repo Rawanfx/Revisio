@@ -125,5 +125,21 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.CourseController",
+    "Method": "AddCourse",
+    "RelativePath": "api/Course/course",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Revisio.Application.Course.Command.AddCourse.AddCourseCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

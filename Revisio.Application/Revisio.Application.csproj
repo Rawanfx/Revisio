@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <Folder Include="Auth\Query\" />
+    <Folder Include="Course\Common\" />
+    <Folder Include="Course\Query\" />
   </ItemGroup>
 
 </Project>
