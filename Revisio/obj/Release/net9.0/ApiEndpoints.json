@@ -129,7 +129,7 @@
   {
     "ContainingType": "Revisio.API.Controllers.CourseController",
     "Method": "AddCourse",
-    "RelativePath": "api/Course/course",
+    "RelativePath": "api/Course",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -138,6 +138,27 @@
         "Name": "command",
         "Type": "Revisio.Application.Course.Command.AddCourse.AddCourseCommand",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.LectureController",
+    "Method": "Upload",
+    "RelativePath": "api/Lecture",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "LectureFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

@@ -216,6 +216,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.101.4, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.17.0, )"
@@ -330,6 +334,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.101.4, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[12.1.1, )"

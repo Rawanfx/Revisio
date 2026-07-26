@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3Y3vopCyYZQ=",
+  "dgSpecHash": "IcKxZmAZpAQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio\\Revisio.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\awssdk.core\\4.0.100.8\\awssdk.core.4.0.100.8.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\awssdk.s3\\4.0.101.4\\awssdk.s3.4.0.101.4.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",

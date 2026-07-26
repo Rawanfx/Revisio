@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WFFYEzPHwQA=",
+  "dgSpecHash": "kFQqCgLVZ+g=",
   "success": true,
   "projectFilePath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\awssdk.core\\4.0.100.8\\awssdk.core.4.0.100.8.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\awssdk.s3\\4.0.101.4\\awssdk.s3.4.0.101.4.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",

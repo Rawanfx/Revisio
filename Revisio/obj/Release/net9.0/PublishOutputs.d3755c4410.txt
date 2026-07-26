@@ -4,6 +4,8 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Ou
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Revisio.API.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Revisio.API.runtimeconfig.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Revisio.API.pdb
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\AWSSDK.Core.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\AWSSDK.S3.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\BouncyCastle.Cryptography.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\FluentValidation.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\FluentValidation.AspNetCore.dll

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "Revisio.Infrastructure/1.0.0": {
         "dependencies": {
+          "AWSSDK.S3": "4.0.101.4",
           "MailKit": "4.17.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.18",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.18",
@@ -21,6 +22,25 @@
         },
         "runtime": {
           "Revisio.Infrastructure.dll": {}
+        }
+      },
+      "AWSSDK.Core/4.0.100.8": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.100.8"
+          }
+        }
+      },
+      "AWSSDK.S3/4.0.101.4": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.100.8"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.101.4"
+          }
         }
       },
       "Azure.Core/1.38.0": {
@@ -1351,6 +1371,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/4.0.100.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xnuBVLQBmYQXsDZJ9mq2UDSFZm3xgO5oUb4/UR8p0UO7tG6heDhsLLI1NzZhIVAKyfW0tXg9hn9a/ek018TOVw==",
+      "path": "awssdk.core/4.0.100.8",
+      "hashPath": "awssdk.core.4.0.100.8.nupkg.sha512"
+    },
+    "AWSSDK.S3/4.0.101.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TYFuatWECzCbj/Lu1SsANucgpU/Br5YJ5Padl3YEdNJGfZqAcx3QemJw2BUopAsYTJ3e7TFpWhpNWha3dB9/dw==",
+      "path": "awssdk.s3/4.0.101.4",
+      "hashPath": "awssdk.s3.4.0.101.4.nupkg.sha512"
     },
     "Azure.Core/1.38.0": {
       "type": "package",

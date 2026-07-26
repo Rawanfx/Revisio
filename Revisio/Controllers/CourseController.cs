@@ -12,7 +12,7 @@ namespace Revisio.API.Controllers
         private readonly IMediator mediator;
         public CourseController(IMediator mediator) => this.mediator = mediator;
         
-        [HttpPost("course")]
+        [HttpPost]
         [Authorize(Roles ="Student")]
         public async Task<IActionResult>AddCourse (AddCourseCommand command)
         {

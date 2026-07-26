@@ -1,3 +1,4 @@
+using Amazon.S3;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -28,6 +29,8 @@ builder.Services.AddOpenApi();
 builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("Jwt"));
 builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSetting"));
 builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppConfig"));
+builder.Services.Configure<B2Setting>(builder.Configuration.GetSection("B2"));
+builder.Services.AddScoped<IUploadToCloud, UploadToBackBlaze>();
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 //Add mediatR
@@ -71,6 +74,19 @@ var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))
     .SetApplicationName("Revisio");
+
+builder.Services.AddSingleton<IAmazonS3>(sp =>
+{
+    var b2Setting = sp.GetRequiredService<IOptions<B2Setting>>().Value;
+
+    var s3Config = new AmazonS3Config
+    {
+        ServiceURL = $"https://{b2Setting.Endpoint}",
+        ForcePathStyle = true
+    };
+
+    return new AmazonS3Client(b2Setting.AccessKey, b2Setting.SecretKey, s3Config);
+});
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUserService, CurrentUser>();
