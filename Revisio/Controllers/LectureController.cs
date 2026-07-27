@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Lecture.Command.UploadLecture;
+using Revisio.Application.Lecture.Query.GetAllLecturesForCourse;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Revisio.API.Controllers
 {
@@ -21,6 +23,13 @@ namespace Revisio.API.Controllers
         public async Task<IActionResult> Upload([FromForm] UploadLectureCommand command)
         {
            var result =  await mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpGet("")]
+        [Authorize(Roles ="Student")]
+        public async Task<IActionResult> GetLecture([FromQuery] GetAllLecturesForCourseQuery query)
+        {
+            var result = await mediator.Send(query);
             return Ok(result);
         }
     }

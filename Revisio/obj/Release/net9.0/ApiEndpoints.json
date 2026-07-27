@@ -185,6 +185,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Revisio.API.Controllers.LectureController",
+    "Method": "GetLecture",
+    "RelativePath": "api/Lecture",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Revisio.API.Controllers.PastExamController",
     "Method": "Upload",
     "RelativePath": "api/PastExam",
