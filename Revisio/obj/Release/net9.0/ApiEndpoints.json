@@ -143,6 +143,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Revisio.API.Controllers.CourseController",
+    "Method": "AllCourse",
+    "RelativePath": "api/Course",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNum",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Revisio.API.Controllers.LectureController",
     "Method": "Upload",
     "RelativePath": "api/Lecture",

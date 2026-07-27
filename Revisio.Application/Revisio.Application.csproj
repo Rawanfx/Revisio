@@ -20,8 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Auth\Query\" />
-    <Folder Include="Course\Common\" />
-    <Folder Include="Course\Query\" />
     <Folder Include="Lecture\Query\" />
     <Folder Include="PastExam\Query\" />
   </ItemGroup>

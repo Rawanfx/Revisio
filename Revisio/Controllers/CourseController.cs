@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Course.Command.AddCourse;
+using Revisio.Application.Course.Query.GetAllCourseWithLecture;
 
 namespace Revisio.API.Controllers
 {
@@ -18,6 +19,13 @@ namespace Revisio.API.Controllers
         {
            var response= await mediator.Send(command);
             return Ok(response);
+        }
+        [HttpGet("")]
+        [Authorize (Roles ="Student")]
+        public async Task <ActionResult>AllCourse ([FromQuery]GetAllCoursesWithLectureQuery query)
+        {
+            var response = await mediator.Send(query);
+            return Ok( response);
         }
     }
 }
