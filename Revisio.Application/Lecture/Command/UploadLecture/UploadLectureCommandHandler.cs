@@ -4,6 +4,7 @@ using Revisio.Application.Common.Exceptions;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
 using Revisio.Domain.Entities;
+using System.Security.Cryptography;
 namespace Revisio.Application.Lecture.Command.UploadLecture
 {
     public class UploadLectureCommandHandler : IRequestHandler<UploadLectureCommand, Response<Guid>>
@@ -28,6 +29,16 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
             && x.UserId == user);
             if (course == null)
                 throw new NotFoundException("Course Not Found");
+            string fileHash;
+            using (var sha256 = SHA256.Create())
+            using (var s = request.LectureFile.OpenReadStream())
+            {
+
+                fileHash = BitConverter.ToString(sha256.ComputeHash(s))
+                    .Replace("-", "").ToLower();
+            }
+            if (await context.Lectures.AnyAsync(x => x.FileHash == fileHash && x.CourseId == request.CourseId))
+                throw new RepeatException("File has been uploaded!"); 
             using var stream = request.LectureFile.OpenReadStream();
             var fileKey = await uploadToCloud.UploadAsync(stream, request.LectureFile.FileName, request.LectureFile.ContentType);
             var lecture = new Lectures()
@@ -35,7 +46,8 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
                 CourseId = request.CourseId,
                 LecName = request.LectureFile.FileName,
                 UploadedAt = DateTime.UtcNow,
-                UploadUrl = fileKey
+                UploadUrl = fileKey,
+                FileHash=fileHash
             };
            await context.Lectures.AddAsync(lecture);
             await context.SaveChangesAsync();

@@ -220,3 +220,4 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\Newtonsof
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\compressed\b0ehjj8fzf-hv1k5qprph.gz
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\AWSSDK.Core.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\AWSSDK.S3.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\Serilog.Settings.Configuration.dll

@@ -386,6 +386,10 @@
               "target": "Package",
               "version": "[4.4.0, )"
             },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Serilog.Sinks.File": {
               "target": "Package",
               "version": "[7.0.0, )"

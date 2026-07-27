@@ -33,7 +33,10 @@ namespace Revisio.API.Middlewares
                 UnauthorizedException exception => (Response<object>.FailResponse(ex.Message),
                     StatusCodes.Status401Unauthorized),
 
-                _ => (Response<object>.FailResponse("An Error Occured"),StatusCodes.Status500InternalServerError)
+                RepeatException exception => (Response<object>.FailResponse(ex.Message)
+                , StatusCodes.Status400BadRequest),
+
+                _ => (Response<object>.FailResponse("An Error Occured"), StatusCodes.Status500InternalServerError)
             };
             response.Success = false;
             context.Response.StatusCode = statusCode;

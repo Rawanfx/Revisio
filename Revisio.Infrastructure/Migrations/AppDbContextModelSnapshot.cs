@@ -298,6 +298,10 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("FileHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LecName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -324,6 +328,10 @@ namespace Revisio.Infrastructure.Migrations
 
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FileHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InstructorName")
                         .HasColumnType("nvarchar(max)");

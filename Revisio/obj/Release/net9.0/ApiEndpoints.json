@@ -162,5 +162,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.PastExamController",
+    "Method": "Upload",
+    "RelativePath": "api/PastExam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "InstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pastFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

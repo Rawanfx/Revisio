@@ -17,6 +17,7 @@ using Revisio.Domain.Entities;
 using Revisio.Infrastructure.Data;
 using Revisio.Infrastructure.Services;
 using Revisio.Infrastructure.Settings;
+using Serilog;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("Jwt"));

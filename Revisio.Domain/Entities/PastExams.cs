@@ -8,6 +8,7 @@ namespace Revisio.Domain.Entities
         [Key]
         public Guid Id { get; set; }
         public string UploadUrl { get; set; }
+        public string FileHash { get; set; }
         [ForeignKey(nameof(Course))]
         public Guid CourseId { get; set;}
         public Course Course { get; set; }
