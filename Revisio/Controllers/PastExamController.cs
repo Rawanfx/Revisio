@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Revisio.Application.PastExam.Command.UploadPastExam;
 using Microsoft.AspNetCore.Mvc;
+using Revisio.Application.PastExam.Query.GetAllExamsForCourse;
 
 namespace Revisio.API.Controllers
 {
@@ -16,6 +17,13 @@ namespace Revisio.API.Controllers
         public async Task<IActionResult> Upload([FromForm]UploadPastExamCommand command)
         {
             var result = await mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> DisplayExams([FromQuery] GetAllExamsForCourseQuery query)
+        {
+            var result = await mediator.Send(query);
             return Ok(result);
         }
     }

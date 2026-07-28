@@ -55,7 +55,8 @@ namespace Revisio.Application.PastExam.Command.UploadPastExam
                 CourseId = request.CourseId,
                 FileHash = fileHash,
                 InstructorName = request.InstName,
-                UploadUrl = uploadFileKey
+                UploadUrl = uploadFileKey,
+                ExamType =request.ExamType
             };
 
             context.PastExams.Add(pastExam);

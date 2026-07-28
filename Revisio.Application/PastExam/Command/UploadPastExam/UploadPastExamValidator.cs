@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Revisio.Application.Common.Validator;
+using Revisio.Domain.Enums;
 
 namespace Revisio.Application.PastExam.Command.UploadPastExam
 {
@@ -15,6 +16,8 @@ namespace Revisio.Application.PastExam.Command.UploadPastExam
                 .Must(FileValidatorHelper.BeAValidFileSize).WithMessage($"File size must not exceed {FileValidatorHelper.MaxFileSizeInBytes / 1024 / 1024} MB")
                 .Must(FileValidatorHelper.HaveValidExtension).WithMessage($"Only {string.Join(", ", FileValidatorHelper._allowedExtensions)} files are allowed")
                 .MustAsync(FileValidatorHelper.HaveValidFileSignture);
+            RuleFor(x => x.ExamType)
+                .IsInEnum();
            
         }
     }

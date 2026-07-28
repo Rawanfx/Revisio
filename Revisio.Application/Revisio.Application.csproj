@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Auth\Query\" />
-    <Folder Include="PastExam\Query\" />
   </ItemGroup>
 
 </Project>
