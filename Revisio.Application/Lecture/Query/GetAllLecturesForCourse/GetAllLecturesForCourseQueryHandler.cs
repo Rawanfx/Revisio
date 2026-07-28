@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Revisio.Application.Lecture.Query.GetAllLecturesForCourse
 {
-    public class GetAllLecturesForCourseQueryHandler : IRequestHandler<GetAllLecturesForCourseQuery, Response<List<AllLectureDto>>>
+    public class GetAllLecturesForCourseQueryHandler : IRequestHandler<GetAllLecturesForCourseQuery, Response<PaginatedList<AllLectureDto>>>
     {
         private readonly IAppDbContext context;
         private readonly ICurrentUserService currentUser;
@@ -22,30 +22,40 @@ namespace Revisio.Application.Lecture.Query.GetAllLecturesForCourse
             this.currentUser = currentUser;
             this.uploadToCloud = uploadToCloud;
         }
-        public async Task<Response<List<AllLectureDto>>> Handle(GetAllLecturesForCourseQuery request, CancellationToken cancellationToken)
+        public async Task<Response<PaginatedList<AllLectureDto>>> Handle(
+    GetAllLecturesForCourseQuery request, CancellationToken cancellationToken)
         {
             var user = currentUser.UserId;
             if (user == null)
                 throw new UnauthorizedException("Unauthorized user");
-            var course = await context.Courses.FirstOrDefaultAsync(x => x.UserId == user && x.Id == request.CourseId);
+
+            var course = await context.Courses
+                .FirstOrDefaultAsync(x => x.UserId == user && x.Id == request.CourseId);
             if (course == null)
                 throw new NotFoundException("Course not found");
 
-            var query = await context.Lectures.Where(x => x.CourseId == request.CourseId)
+            var query = context.Lectures
+                .Where(x => x.CourseId == request.CourseId)
                 .Select(x => new AllLectureDto()
                 {
                     LecName = x.LecName,
                     UploadDate = x.UploadedAt,
                     UploadUrl = x.UploadUrl
-                }).ToListAsync();
-            foreach (var i in query)
+                });
+
+            var result = await PaginatedList<AllLectureDto>.CreateAsync(
+                query, request.PageNum, request.PageSize);
+
+            foreach (var i in result.Items)
             {
                 i.UploadUrl = await uploadToCloud.GenerateUrl(i.UploadUrl);
             }
-            return new Response<List<AllLectureDto>>()
+
+            return new Response<PaginatedList<AllLectureDto>>()
             {
-                Data = query,
+                Data = result,
                 Success = true
             };
-    }   }
+        }
+    }
 }
