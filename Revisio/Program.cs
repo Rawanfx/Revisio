@@ -130,6 +130,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseCors("Allow");
 app.UseRateLimiter();
 app.UseAuthentication(); 

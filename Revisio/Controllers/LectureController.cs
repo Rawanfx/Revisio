@@ -18,7 +18,7 @@ namespace Revisio.API.Controllers
         {
             this.mediator = mediator;
         }
-        [Authorize(Roles = "Student")]
+        [Authorize()]
         [HttpPost()]
         public async Task<IActionResult> Upload([FromForm] UploadLectureCommand command)
         {

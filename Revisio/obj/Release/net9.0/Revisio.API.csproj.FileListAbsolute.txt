@@ -217,7 +217,8 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\ref\Revis
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\Revisio.API.sourcelink.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\JWT.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\Newtonsoft.Json.dll
-C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\compressed\b0ehjj8fzf-hv1k5qprph.gz
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\AWSSDK.Core.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\AWSSDK.S3.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\Serilog.Settings.Configuration.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\compressed\zte9tjbpyx-6gh717nzbi.gz
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\compressed\b0ehjj8fzf-96r8hwaq7c.gz

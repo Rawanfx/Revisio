@@ -26,7 +26,7 @@ namespace Revisio.Application.Auth.Command.ForgetAndResetPassword
             {
                 var token = await userManager.GeneratePasswordResetTokenAsync(user);
                 var encodedToken = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
-                await mailService.SendForgetPasswordEmail(request.Email, encodedToken, "http://revisio.runasp.net/reset-passwordS");
+                await mailService.SendForgetPasswordEmail(request.Email, encodedToken, "http://revisio.runasp.net/Templets/ResetPasswordPage.html");
             }
 
             return new Response<string>
