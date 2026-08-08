@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Revisio.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using Revisio.Infrastructure.Data;
 namespace Revisio.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260808215946_AddGenerateQuestions")]
+    partial class AddGenerateQuestions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -412,66 +415,6 @@ namespace Revisio.Infrastructure.Migrations
                     b.ToTable("PastExams");
                 });
 
-            modelBuilder.Entity("Revisio.Domain.Entities.QuestionOptions", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsCorrect")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Option")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("QuestionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QuestionId");
-
-                    b.ToTable("QuestionOptions");
-                });
-
-            modelBuilder.Entity("Revisio.Domain.Entities.Questions", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Difficulty")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Explantion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("GenrationRequestId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Topic")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GenrationRequestId");
-
-                    b.ToTable("Questions");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -586,28 +529,6 @@ namespace Revisio.Infrastructure.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("Revisio.Domain.Entities.QuestionOptions", b =>
-                {
-                    b.HasOne("Revisio.Domain.Entities.Questions", "Questions")
-                        .WithMany("QuestionOptions")
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Questions");
-                });
-
-            modelBuilder.Entity("Revisio.Domain.Entities.Questions", b =>
-                {
-                    b.HasOne("Revisio.Domain.Entities.GenerationRequest", "GenerationRequest")
-                        .WithMany()
-                        .HasForeignKey("GenrationRequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("GenerationRequest");
-                });
-
             modelBuilder.Entity("Revisio.Domain.Entities.Course", b =>
                 {
                     b.Navigation("Lectures");
@@ -618,11 +539,6 @@ namespace Revisio.Infrastructure.Migrations
             modelBuilder.Entity("Revisio.Domain.Entities.GenerationRequest", b =>
                 {
                     b.Navigation("SelectedLectures");
-                });
-
-            modelBuilder.Entity("Revisio.Domain.Entities.Questions", b =>
-                {
-                    b.Navigation("QuestionOptions");
                 });
 #pragma warning restore 612, 618
         }

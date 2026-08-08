@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Revisio.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf7870413ca1b7796c6f7ac787f7348bffa82cc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55f5d69e4e0d430940a5681213260be9e263db1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Revisio.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Revisio.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
