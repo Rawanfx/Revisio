@@ -81,6 +81,10 @@
             "Microsoft.AspNetCore.WebUtilities": {
               "target": "Package",
               "version": "[9.0.18, )"
+            },
+            "PdfPig": {
+              "target": "Package",
+              "version": "[0.1.15, )"
             }
           },
           "imports": [
@@ -267,6 +271,10 @@
             "MimeKit": {
               "target": "Package",
               "version": "[4.17.0, )"
+            },
+            "PdfPig": {
+              "target": "Package",
+              "version": "[0.1.15, )"
             }
           },
           "imports": [

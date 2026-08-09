@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7K5eBbcBtec=",
+  "dgSpecHash": "araNbOex4QQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.identitymodel.logging\\8.14.0\\microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.14.0\\microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.net.http.headers\\9.0.18\\microsoft.net.http.headers.9.0.18.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\pdfpig\\0.1.15\\pdfpig.0.1.15.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\system.diagnostics.diagnosticsource\\10.0.0\\system.diagnostics.diagnosticsource.10.0.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",

@@ -14,14 +14,14 @@ namespace Revisio.API.Controllers
         public CourseController(IMediator mediator) => this.mediator = mediator;
         
         [HttpPost]
-        [Authorize(Roles ="Student")]
+        [Authorize]
         public async Task<IActionResult>AddCourse (AddCourseCommand command)
         {
            var response= await mediator.Send(command);
             return Ok(response);
         }
         [HttpGet("")]
-        [Authorize (Roles ="Student")]
+        [Authorize ]
         public async Task <ActionResult>AllCourse ([FromQuery]GetAllCoursesWithLectureQuery query)
         {
             var response = await mediator.Send(query);

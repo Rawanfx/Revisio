@@ -12,6 +12,9 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Ou
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\JWT.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MailKit.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MassTransit.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MassTransit.Abstractions.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MassTransit.RabbitMqTransport.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MediatR.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MediatR.Contracts.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -53,6 +56,7 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Ou
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MimeKit.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\MimeTypesMap.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\RabbitMQ.Client.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Serilog.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Serilog.Settings.Configuration.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\PubTmp\Out\Serilog.Sinks.File.dll

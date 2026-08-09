@@ -1,5 +1,6 @@
 using Amazon.S3;
 using FluentValidation;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
@@ -14,6 +15,7 @@ using Revisio.API.Service;
 using Revisio.Application.Behaviors;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Domain.Entities;
+using Revisio.Infrastructure.Consumers;
 using Revisio.Infrastructure.Data;
 using Revisio.Infrastructure.Services;
 using Revisio.Infrastructure.Settings;
@@ -37,6 +39,7 @@ builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSe
 builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppConfig"));
 builder.Services.Configure<B2Setting>(builder.Configuration.GetSection("B2"));
 builder.Services.AddScoped<IUploadToCloud, UploadToBackBlaze>();
+builder.Services.AddScoped<IGenerateQuestionAIService, MockAIServiceClient>();
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 //Add mediatR
@@ -75,7 +78,18 @@ builder.Services.AddAuthentication(x =>
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtSetting.Key))
     };
 });
-
+//add rabbitMq
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<QuestionGenerationConsumer>();
+    x.UsingRabbitMq ((context, cfg) =>
+    {
+        cfg.Host(new Uri(builder.Configuration["RabbitMQ:CS"]));
+        cfg.ConfigureEndpoints(context);
+    });
+});
+//pdfExtractor
+builder.Services.AddScoped<IPdfExtractor, PdfExtractor>();
 var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "DataProtectionKeys");
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))

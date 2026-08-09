@@ -3,6 +3,7 @@
     public enum GenrateExamStatus
     {
         Pending,
-        Completed
+        Completed,
+        Faild
     }
 }

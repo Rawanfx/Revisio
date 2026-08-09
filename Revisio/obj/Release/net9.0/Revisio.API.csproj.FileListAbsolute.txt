@@ -222,3 +222,14 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\AWSSDK.S3
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\Serilog.Settings.Configuration.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\compressed\zte9tjbpyx-6gh717nzbi.gz
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Release\net9.0\compressed\b0ehjj8fzf-96r8hwaq7c.gz
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\MassTransit.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\MassTransit.Abstractions.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\MassTransit.RabbitMqTransport.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\RabbitMQ.Client.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.Core.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.DocumentLayoutAnalysis.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.Fonts.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.Package.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.Tokenization.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.Tokens.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Release\net9.0\UglyToad.PdfPig.dll

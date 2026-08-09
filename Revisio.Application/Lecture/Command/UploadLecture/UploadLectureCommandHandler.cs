@@ -4,6 +4,7 @@ using Revisio.Application.Common.Exceptions;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
 using Revisio.Domain.Entities;
+using System.Reflection.Metadata;
 using System.Security.Cryptography;
 namespace Revisio.Application.Lecture.Command.UploadLecture
 {
@@ -12,13 +13,16 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
         private readonly IAppDbContext context;
         private readonly ICurrentUserService currentUser;
         private readonly IUploadToCloud uploadToCloud;
+        private readonly ITextExtractorFactory textExtractorFactory;
         public UploadLectureCommandHandler(IAppDbContext context
             ,ICurrentUserService currentUser
-            ,IUploadToCloud uploadToCloud)
+            ,IUploadToCloud uploadToCloud
+            , ITextExtractorFactory textExtractorFactory)
         {
             this.context = context;
             this.currentUser = currentUser;
             this.uploadToCloud = uploadToCloud;
+            this.textExtractorFactory = textExtractorFactory;
         }
         public async Task<Response<Guid>> Handle(UploadLectureCommand request, CancellationToken cancellationToken)
         {
@@ -41,13 +45,18 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
                 throw new RepeatException("File has been uploaded!"); 
             using var stream = request.LectureFile.OpenReadStream();
             var fileKey = await uploadToCloud.UploadAsync(stream, request.LectureFile.FileName, request.LectureFile.ContentType);
+            var extension = Path.GetExtension(request.LectureFile.FileName);
+            var extractor = textExtractorFactory.textExtractor(extension);
+            var content = extractor.Extract(stream);
             var lecture = new Lectures()
             {
                 CourseId = request.CourseId,
                 LecName = request.LectureFile.FileName,
                 UploadedAt = DateTime.UtcNow,
                 UploadUrl = fileKey,
-                FileHash=fileHash
+                FileHash=fileHash,
+                Content=content,
+                Id=Guid.NewGuid()
             };
            await context.Lectures.AddAsync(lecture);
             await context.SaveChangesAsync();

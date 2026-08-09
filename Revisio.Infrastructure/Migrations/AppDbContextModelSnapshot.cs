@@ -354,6 +354,10 @@ namespace Revisio.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 

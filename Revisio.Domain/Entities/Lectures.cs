@@ -14,5 +14,6 @@ namespace Revisio.Domain.Entities
         [ForeignKey(nameof (Course))]
         public Guid CourseId { get; set; }
         public Course Course { get; set; }
+        public string Content { get; set; }
     }
 }
