@@ -58,6 +58,14 @@
               "target": "Package",
               "version": "[12.1.1, )"
             },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[14.2.0, )"
@@ -353,6 +361,14 @@
             "JWT": {
               "target": "Package",
               "version": "[11.1.0, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[9.2.0, )"
             },
             "MediatR": {
               "target": "Package",

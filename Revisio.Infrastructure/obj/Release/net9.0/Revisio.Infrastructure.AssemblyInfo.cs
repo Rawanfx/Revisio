@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Revisio.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55f5d69e4e0d430940a5681213260be9e263db1d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46b2a9cbee0f7bbee65429f2b2b2ae2e39f455fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Revisio.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Revisio.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

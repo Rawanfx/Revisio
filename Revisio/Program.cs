@@ -19,12 +19,14 @@ using Revisio.Infrastructure.Services;
 using Revisio.Infrastructure.Settings;
 using Serilog;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(x=>x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();

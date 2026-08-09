@@ -12,7 +12,7 @@ namespace Revisio.Application.Common.Interfaces
         DbSet<PastExams> PastExams { get; }
         DbSet<GenerationRequest> GenerationRequests { get; }
         DbSet<GenerationRequestLecture>GenerationRequestLectures { get; } 
-        DbSet<Questions>Questions { get; }
+        DbSet<Revisio.Domain.Entities.Questions> Questions { get; }
         DbSet<QuestionOptions> QuestionOptions { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }

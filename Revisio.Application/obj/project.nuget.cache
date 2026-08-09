@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "TpOXAwT45cw=",
+  "dgSpecHash": "7K5eBbcBtec=",
   "success": true,
   "projectFilePath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Techno Shield\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\masstransit\\9.2.0\\masstransit.9.2.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\masstransit.abstractions\\9.2.0\\masstransit.abstractions.9.2.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\masstransit.rabbitmq\\9.2.0\\masstransit.rabbitmq.9.2.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\mediatr\\14.2.0\\mediatr.14.2.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.18\\microsoft.aspnetcore.cryptography.internal.9.0.18.nupkg.sha512",
@@ -24,9 +27,11 @@
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.18\\microsoft.extensions.configuration.abstractions.9.0.18.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.18\\microsoft.extensions.dependencyinjection.9.0.18.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
-    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.1\\microsoft.extensions.diagnostics.abstractions.8.0.1.nupkg.sha512",
-    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.1\\microsoft.extensions.hosting.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\9.0.0\\microsoft.extensions.diagnostics.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks\\9.0.0\\microsoft.extensions.diagnostics.healthchecks.9.0.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\9.0.0\\microsoft.extensions.diagnostics.healthchecks.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0\\microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\9.0.0\\microsoft.extensions.hosting.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.identity.core\\9.0.18\\microsoft.extensions.identity.core.9.0.18.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.identity.stores\\9.0.18\\microsoft.extensions.identity.stores.9.0.18.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.extensions.logging\\9.0.18\\microsoft.extensions.logging.9.0.18.nupkg.sha512",
@@ -38,9 +43,11 @@
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.identitymodel.logging\\8.14.0\\microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.14.0\\microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\microsoft.net.http.headers\\9.0.18\\microsoft.net.http.headers.9.0.18.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\system.diagnostics.diagnosticsource\\10.0.0\\system.diagnostics.diagnosticsource.10.0.0.nupkg.sha512",
-    "C:\\Users\\Techno Shield\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
-    "C:\\Users\\Techno Shield\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
