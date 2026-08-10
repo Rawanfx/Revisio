@@ -2,7 +2,7 @@
 using System.Text;
 using UglyToad.PdfPig;
 
-namespace Revisio.Infrastructure.Services
+namespace Revisio.Infrastructure.Services.TextExtractor
 {
     public class PdfExtractor : ITextExtractor
     {

@@ -4,6 +4,6 @@
     {
         Pending,
         Completed,
-        Faild
+        Failed
     }
 }

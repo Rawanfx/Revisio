@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wMDVd+NJwVU=",
+  "dgSpecHash": "BA61hgFs+A8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -79,6 +79,7 @@
     "C:\\Users\\Techno Shield\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\pdfpig\\0.1.15\\pdfpig.0.1.15.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
+    "C:\\Users\\Techno Shield\\.nuget\\packages\\serilog\\4.4.0\\serilog.4.4.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\Techno Shield\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

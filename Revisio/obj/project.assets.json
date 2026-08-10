@@ -2242,7 +2242,8 @@
           "Mime": "3.8.0",
           "MimeKit": "4.17.0",
           "PdfPig": "0.1.15",
-          "Revisio.Application": "1.0.0"
+          "Revisio.Application": "1.0.0",
+          "Serilog": "4.4.0"
         },
         "compile": {
           "bin/placeholder/Revisio.Infrastructure.dll": {}

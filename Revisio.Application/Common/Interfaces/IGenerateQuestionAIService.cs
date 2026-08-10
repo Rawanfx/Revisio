@@ -4,6 +4,6 @@ namespace Revisio.Application.Common.Interfaces
 {
     public interface IGenerateQuestionAIService
     {
-        List<GeneratedQuestionsDto> GenerateQuestions(GenerateQuestionsAIServiceRequestDto dto);
+       Task< List<GeneratedQuestionsDto>> GenerateQuestions(GenerateQuestionsAIServiceRequestDto dto, CancellationToken cancellationToken);
     }
 }

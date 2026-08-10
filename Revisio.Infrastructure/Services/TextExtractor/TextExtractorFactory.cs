@@ -15,7 +15,7 @@ namespace Revisio.Infrastructure.Services.TextExtractor
             var validExtractor = extractors.FirstOrDefault(x => x.CanExtract(fileExtension));
             if (validExtractor != null)
                 return validExtractor;
-            throw new NotSupportedException("Not Supported file")
+            throw new NotSupportedException("Not Supported file");
         }
     }
 }

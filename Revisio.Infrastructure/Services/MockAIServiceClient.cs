@@ -5,17 +5,17 @@ namespace Revisio.Infrastructure.Services
 {
     public class MockAIServiceClient : IGenerateQuestionAIService
     {
-        public List<GeneratedQuestionsDto> GenerateQuestions(GenerateQuestionsAIServiceRequestDto dto)
+        public async Task<List<GeneratedQuestionsDto>> GenerateQuestions(GenerateQuestionsAIServiceRequestDto request,CancellationToken ct)
         {
             var questions = new List<GeneratedQuestionsDto>();
 
-            for (int i = 0; i < dto.TotalQuestion; i++)
+            for (int i = 0; i < request.TotalQuestion; i++)
             {
                 questions.Add(new GeneratedQuestionsDto
                 {
                     Text = $"Mock Question Number {i+1}",
                     Type = "MCQ",
-                    Difficulty = "Medium",
+                    Difficulty = "Meduim",
                     Topic = "General",
                     Explanation = "ده شرح وهمي للاختبار",
                     Options = new List<GeneratedOptionDto>

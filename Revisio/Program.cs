@@ -18,6 +18,7 @@ using Revisio.Domain.Entities;
 using Revisio.Infrastructure.Consumers;
 using Revisio.Infrastructure.Data;
 using Revisio.Infrastructure.Services;
+using Revisio.Infrastructure.Services.TextExtractor;
 using Revisio.Infrastructure.Settings;
 using Serilog;
 using System.Reflection;
@@ -89,7 +90,8 @@ builder.Services.AddMassTransit(x =>
     });
 });
 //pdfExtractor
-builder.Services.AddScoped<IPdfExtractor, PdfExtractor>();
+builder.Services.AddScoped<ITextExtractor, PdfExtractor>();
+builder.Services.AddScoped<ITextExtractorFactory, TextExtractorFactory>();
 var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "DataProtectionKeys");
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))

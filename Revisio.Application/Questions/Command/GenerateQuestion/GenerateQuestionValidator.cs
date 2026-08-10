@@ -3,29 +3,29 @@ using Revisio.Application.Questions.Dto;
 
 namespace Revisio.Application.Questions.Command.GenerateQuestion
 {
-    public class GenerateQuestionValidator:AbstractValidator<GenerateQuestionRequestDto>
+    public class GenerateQuestionValidator:AbstractValidator<GenerateQuestionCommand>
     {
         public GenerateQuestionValidator()
         {
-            RuleFor(x => x.TotalQuestions)
+            RuleFor(x => x.GenerateQuestionRequestDto.TotalQuestions)
                 .GreaterThan(0);
 
-            RuleFor(x => x)
+            RuleFor(x => x.GenerateQuestionRequestDto)
                 .Must(IsValidTotalQ);
 
-            RuleFor(x => x.TrueFalse)
+            RuleFor(x => x.GenerateQuestionRequestDto.TrueFalse)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.Hard)
+            RuleFor(x => x.GenerateQuestionRequestDto.Hard)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.Essay)
+            RuleFor(x => x.GenerateQuestionRequestDto.Essay)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.Easy)
+            RuleFor(x => x.GenerateQuestionRequestDto.Easy)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.MCQ)
+            RuleFor(x => x.GenerateQuestionRequestDto.MCQ)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.Meduim)
+            RuleFor(x => x.GenerateQuestionRequestDto.Meduim)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.LectureIds)
+            RuleFor(x => x.GenerateQuestionRequestDto.LectureIds)
                 .NotEmpty();
 
         }

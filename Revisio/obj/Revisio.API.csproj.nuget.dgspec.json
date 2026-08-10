@@ -275,6 +275,10 @@
             "PdfPig": {
               "target": "Package",
               "version": "[0.1.15, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.4.0, )"
             }
           },
           "imports": [

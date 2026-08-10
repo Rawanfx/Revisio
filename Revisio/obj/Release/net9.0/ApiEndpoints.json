@@ -266,5 +266,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.QuestionsController",
+    "Method": "GenerateQuestions",
+    "RelativePath": "api/Questions/generate-questions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Revisio.Application.Questions.Command.GenerateQuestion.GenerateQuestionCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

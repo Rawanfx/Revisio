@@ -19,7 +19,8 @@
           "Mime": "3.8.0",
           "MimeKit": "4.17.0",
           "PdfPig": "0.1.15",
-          "Revisio.Application": "1.0.0"
+          "Revisio.Application": "1.0.0",
+          "Serilog": "4.4.0"
         },
         "runtime": {
           "Revisio.Infrastructure.dll": {}
@@ -1170,6 +1171,14 @@
           }
         }
       },
+      "Serilog/4.4.0": {
+        "runtime": {
+          "lib/net9.0/Serilog.dll": {
+            "assemblyVersion": "4.4.0.0",
+            "fileVersion": "4.4.0.0"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -1990,6 +1999,13 @@
       "sha512": "sha512-YKXEfg9fVQiTKgZlvIhAfPSFaamEgi8DsQmisCH0IAsU4FYLrtoguDrDj6JtJVGUt40QPnBLRH6fTQcAC4qsOg==",
       "path": "rabbitmq.client/7.2.1",
       "hashPath": "rabbitmq.client.7.2.1.nupkg.sha512"
+    },
+    "Serilog/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZC6Le3rr4TVJJjS4KsQAesxeF1EhW9qcZmmG7eP5Y2G3+gTGkJEUXkq4+tZNPtyp05I0wWOxnIjwtxFweJsObw==",
+      "path": "serilog/4.4.0",
+      "hashPath": "serilog.4.4.0.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",
