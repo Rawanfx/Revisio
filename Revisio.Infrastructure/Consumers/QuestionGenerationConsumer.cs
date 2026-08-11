@@ -11,10 +11,10 @@ namespace Revisio.Infrastructure.Consumers
 {
     public class QuestionGenerationConsumer : IConsumer<QuestionGeneratedRequest>
     {
-        private readonly IGenerateQuestionAIService aiServiceClient;
+        private readonly IExamAIGenerator aiServiceClient;
         private readonly IAppDbContext dbContext;
 
-        public QuestionGenerationConsumer(IGenerateQuestionAIService aiServiceClient, IAppDbContext dbContext)
+        public QuestionGenerationConsumer(IExamAIGenerator aiServiceClient, IAppDbContext dbContext)
         {
             this.aiServiceClient = aiServiceClient;
             this.dbContext = dbContext;
@@ -61,7 +61,7 @@ namespace Revisio.Infrastructure.Consumers
 
                 var generatedQuestions = await aiServiceClient.GenerateQuestions(aiRequestDto, ct);
 
-                foreach (var gq in generatedQuestions)
+                foreach (var gq in generatedQuestions.Questions)
                 {
                     var question = new Questions
                     {

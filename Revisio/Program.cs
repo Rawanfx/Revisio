@@ -40,7 +40,7 @@ builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSe
 builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppConfig"));
 builder.Services.Configure<B2Setting>(builder.Configuration.GetSection("B2"));
 builder.Services.AddScoped<IUploadToCloud, UploadToBackBlaze>();
-builder.Services.AddScoped<IGenerateQuestionAIService, MockAIServiceClient>();
+builder.Services.AddScoped<IExamAIGenerator, MockAIServiceClient>();
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 //Add mediatR
@@ -85,7 +85,7 @@ builder.Services.AddMassTransit(x =>
     x.AddConsumer<QuestionGenerationConsumer>();
     x.UsingRabbitMq ((context, cfg) =>
     {
-        cfg.Host(new Uri(builder.Configuration["RabbitMQ:CS"]));
+        cfg.Host(new Uri("amqps://glwcwbjx:BOuqBBiSYHe17WiWY4xDfU3Kcy3E0sCg@capybara.lmq.cloudamqp.com/glwcwbjx"));
         cfg.ConfigureEndpoints(context);
     });
 });

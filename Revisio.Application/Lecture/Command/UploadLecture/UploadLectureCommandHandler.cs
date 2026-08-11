@@ -29,38 +29,59 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
             var user = currentUser.UserId;
             if (user == null)
                 throw new UnauthorizedException("Unauthorized user");
+
             var course = await context.Courses.FirstOrDefaultAsync(x => x.Id == request.CourseId
-            && x.UserId == user);
+                && x.UserId == user, cancellationToken);
             if (course == null)
                 throw new NotFoundException("Course Not Found");
+
+            byte[] fileBytes;
+            using (var tempStream = new MemoryStream())
+            {
+                await request.LectureFile.OpenReadStream().CopyToAsync(tempStream, cancellationToken);
+                fileBytes = tempStream.ToArray();
+            }
+
             string fileHash;
             using (var sha256 = SHA256.Create())
-            using (var s = request.LectureFile.OpenReadStream())
+            using (var hashStream = new MemoryStream(fileBytes))
             {
-
-                fileHash = BitConverter.ToString(sha256.ComputeHash(s))
-                    .Replace("-", "").ToLower();
+                var hashBytes = await sha256.ComputeHashAsync(hashStream, cancellationToken);
+                fileHash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
-            if (await context.Lectures.AnyAsync(x => x.FileHash == fileHash && x.CourseId == request.CourseId))
-                throw new RepeatException("File has been uploaded!"); 
-            using var stream = request.LectureFile.OpenReadStream();
-            var fileKey = await uploadToCloud.UploadAsync(stream, request.LectureFile.FileName, request.LectureFile.ContentType);
+
+            if (await context.Lectures.AnyAsync(x => x.FileHash == fileHash && x.CourseId == request.CourseId, cancellationToken))
+                throw new RepeatException("File has been uploaded!");
+
+            string fileKey;
+            using (var uploadStream = new MemoryStream(fileBytes))
+            {
+                fileKey = await uploadToCloud.UploadAsync(uploadStream, request.LectureFile.FileName, request.LectureFile.ContentType);
+            }
+
             var extension = Path.GetExtension(request.LectureFile.FileName);
             var extractor = textExtractorFactory.textExtractor(extension);
-            var content = extractor.Extract(stream);
+            string content;
+            using (var extractStream = new MemoryStream(fileBytes))
+            {
+                content = extractor.Extract(extractStream);
+            }
+
             var lecture = new Lectures()
             {
                 CourseId = request.CourseId,
                 LecName = request.LectureFile.FileName,
                 UploadedAt = DateTime.UtcNow,
                 UploadUrl = fileKey,
-                FileHash=fileHash,
-                Content=content,
-                Id=Guid.NewGuid()
+                FileHash = fileHash,
+                Content = content,
+                Id = Guid.NewGuid()
             };
-           await context.Lectures.AddAsync(lecture);
-            await context.SaveChangesAsync();
-            return new Response<Guid>() {Data= lecture.Id,Success=true, Message="Uploaded Successfully" };
+
+            await context.Lectures.AddAsync(lecture, cancellationToken);
+            await context.SaveChangesAsync(cancellationToken);
+
+            return new Response<Guid>() { Data = lecture.Id, Success = true, Message = "Uploaded Successfully" };
         }
     }
 }

@@ -1,4 +1,5 @@
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Infrastructure.deps.json
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Infrastructure.runtimeconfig.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Infrastructure.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Infrastructure.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Application.dll
@@ -10,11 +11,10 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.AssemblyInfo.cs
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.sourcelink.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio..820EA40E.Up2Date
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\refint\Revisio.Infrastructure.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.pdb
-C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\ref\Revisio.Infrastructure.dll
-C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\bin\Debug\net9.0\Revisio.Infrastructure.runtimeconfig.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.genruntimeconfig.cache
-C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\Revisio.Infrastructure.sourcelink.json
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Infrastructure\obj\Debug\net9.0\ref\Revisio.Infrastructure.dll

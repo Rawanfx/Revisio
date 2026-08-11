@@ -15,12 +15,12 @@ namespace Revisio.API.Controllers
         {
             this.mediator = mediator;
         }
-        [HttpPost("generate-questions")]
+        [HttpPost()]
         [Authorize(Roles ="Student")]
         public async Task<IActionResult>GenerateQuestions ([FromBody]GenerateQuestionCommand command)
         {
             var result = await mediator.Send(command);
-            return Ok(result);
+            return Created(string.Empty,result);
         }
     }
 }

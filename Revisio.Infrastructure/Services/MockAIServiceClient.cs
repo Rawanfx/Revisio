@@ -3,15 +3,15 @@ using Revisio.Application.Common.Models;
 
 namespace Revisio.Infrastructure.Services
 {
-    public class MockAIServiceClient : IGenerateQuestionAIService
+    public class MockAIServiceClient : IExamAIGenerator
     {
-        public async Task<List<GeneratedQuestionsDto>> GenerateQuestions(GenerateQuestionsAIServiceRequestDto request,CancellationToken ct)
+        public async Task<List<GeneratedQuestionsResponseDto>> GenerateQuestions(GenerateQuestionsAIServiceRequestDto request,CancellationToken ct)
         {
-            var questions = new List<GeneratedQuestionsDto>();
+            var questions = new List<GeneratedQuestionsResponseDto>();
 
             for (int i = 0; i < request.TotalQuestion; i++)
             {
-                questions.Add(new GeneratedQuestionsDto
+                questions.Add(new GeneratedQuestionsResponseDto
                 {
                     Text = $"Mock Question Number {i+1}",
                     Type = "MCQ",
