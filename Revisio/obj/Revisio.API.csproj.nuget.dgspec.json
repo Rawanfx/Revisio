@@ -236,6 +236,10 @@
               "target": "Package",
               "version": "[2.*, )"
             },
+            "Grpc.Net.ClientFactory": {
+              "target": "Package",
+              "version": "[2.83.0, )"
+            },
             "Grpc.Tools": {
               "suppressParent": "All",
               "target": "Package",
@@ -244,6 +248,10 @@
             "MailKit": {
               "target": "Package",
               "version": "[4.17.0, )"
+            },
+            "MassTransit.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.3.6, )"
             },
             "MassTransit.RabbitMQ": {
               "target": "Package",
@@ -382,6 +390,10 @@
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[12.1.1, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.83.0, )"
             },
             "JWT": {
               "target": "Package",

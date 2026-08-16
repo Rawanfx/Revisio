@@ -15,5 +15,7 @@ namespace Revisio.Domain.Entities
         public Guid CourseId { get; set; }
         public Course Course { get; set; }
         public string Content { get; set; }
+        public IndexingStatus IndexingStatus { get; set; } = IndexingStatus.Pending;
+
     }
 }

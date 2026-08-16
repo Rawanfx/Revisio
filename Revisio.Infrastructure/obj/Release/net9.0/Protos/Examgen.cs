@@ -28,34 +28,33 @@ namespace Revisio.Infrastructure.Grpc {
             "EhIKCmxlY3R1cmVfaWQYASABKAkSEQoJY291cnNlX2lkGAIgASgJEg8KB3Vz",
             "ZXJfaWQYAyABKAkSDwoHY29udGVudBgEIAEoCSJWChRJbmRleExlY3R1cmVS",
             "ZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhUKDWVycm9yX21lc3NhZ2UYAiAB",
-            "KAkSFgoOY2h1bmtzX2luZGV4ZWQYAyABKAUiTgoOTGVjdHVyZUNvbnRlbnQS",
-            "EgoKbGVjdHVyZV9pZBgBIAEoCRIPCgdjb250ZW50GAIgASgJEhcKD3F1ZXN0",
-            "aW9uc19jb3VudBgDIAEoBSJBChNEaWZmaWN1bHR5QnJlYWtkb3duEgwKBGVh",
-            "c3kYASABKAUSDgoGbWVkaXVtGAIgASgFEgwKBGhhcmQYAyABKAUiPwoNVHlw",
-            "ZUJyZWFrZG93bhILCgNtY3EYASABKAUSDQoFZXNzYXkYAiABKAUSEgoKdHJ1",
-            "ZV9mYWxzZRgDIAEoBSKyAQoYR2VuZXJhdGVRdWVzdGlvbnNSZXF1ZXN0EiEK",
-            "CGxlY3R1cmVzGAEgAygLMg8uTGVjdHVyZUNvbnRlbnQSFwoPdG90YWxfcXVl",
-            "c3Rpb25zGAIgASgFEjIKFGRpZmZpY3VsdHlfYnJlYWtkb3duGAMgASgLMhQu",
-            "RGlmZmljdWx0eUJyZWFrZG93bhImCg50eXBlX2JyZWFrZG93bhgEIAEoCzIO",
-            "LlR5cGVCcmVha2Rvd24iagoZR2VuZXJhdGVRdWVzdGlvbnNSZXNwb25zZRIP",
-            "CgdzdWNjZXNzGAEgASgIEhUKDWVycm9yX21lc3NhZ2UYAiABKAkSJQoJcXVl",
-            "c3Rpb25zGAMgAygLMhIuR2VuZXJhdGVkUXVlc3Rpb24iugEKEUdlbmVyYXRl",
-            "ZFF1ZXN0aW9uEgwKBHRleHQYASABKAkSDAoEdHlwZRgCIAEoCRISCgpkaWZm",
-            "aWN1bHR5GAMgASgJEg0KBXRvcGljGAQgASgJEhMKC2V4cGxhbmF0aW9uGAUg",
-            "ASgJEiEKB29wdGlvbnMYBiADKAsyEC5HZW5lcmF0ZWRPcHRpb24SFAoMbW9k",
-            "ZWxfYW5zd2VyGAcgASgJEhgKEGdyYWRpbmdfY3JpdGVyaWEYCCADKAkiMwoP",
-            "R2VuZXJhdGVkT3B0aW9uEgwKBHRleHQYASABKAkSEgoKaXNfY29ycmVjdBgC",
-            "IAEoCDKTAQoNRXhhbUFJU2VydmljZRI7CgxJbmRleExlY3R1cmUSFC5JbmRl",
-            "eExlY3R1cmVSZXF1ZXN0GhUuSW5kZXhMZWN0dXJlUmVzcG9uc2USRQoMR2Vu",
-            "ZXJhdGVFeGFtEhkuR2VuZXJhdGVRdWVzdGlvbnNSZXF1ZXN0GhouR2VuZXJh",
-            "dGVRdWVzdGlvbnNSZXNwb25zZUIeqgIbUmV2aXNpby5JbmZyYXN0cnVjdHVy",
-            "ZS5HcnBjYgZwcm90bzM="));
+            "KAkSFgoOY2h1bmtzX2luZGV4ZWQYAyABKAUiPQoOTGVjdHVyZUNvbnRlbnQS",
+            "EgoKbGVjdHVyZV9pZBgBIAEoCRIXCg9xdWVzdGlvbnNfY291bnQYAyABKAUi",
+            "QQoTRGlmZmljdWx0eUJyZWFrZG93bhIMCgRlYXN5GAEgASgFEg4KBm1lZGl1",
+            "bRgCIAEoBRIMCgRoYXJkGAMgASgFIj8KDVR5cGVCcmVha2Rvd24SCwoDbWNx",
+            "GAEgASgFEg0KBWVzc2F5GAIgASgFEhIKCnRydWVfZmFsc2UYAyABKAUisgEK",
+            "GEdlbmVyYXRlUXVlc3Rpb25zUmVxdWVzdBIhCghsZWN0dXJlcxgBIAMoCzIP",
+            "LkxlY3R1cmVDb250ZW50EhcKD3RvdGFsX3F1ZXN0aW9ucxgCIAEoBRIyChRk",
+            "aWZmaWN1bHR5X2JyZWFrZG93bhgDIAEoCzIULkRpZmZpY3VsdHlCcmVha2Rv",
+            "d24SJgoOdHlwZV9icmVha2Rvd24YBCABKAsyDi5UeXBlQnJlYWtkb3duImoK",
+            "GUdlbmVyYXRlUXVlc3Rpb25zUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIV",
+            "Cg1lcnJvcl9tZXNzYWdlGAIgASgJEiUKCXF1ZXN0aW9ucxgDIAMoCzISLkdl",
+            "bmVyYXRlZFF1ZXN0aW9uIroBChFHZW5lcmF0ZWRRdWVzdGlvbhIMCgR0ZXh0",
+            "GAEgASgJEgwKBHR5cGUYAiABKAkSEgoKZGlmZmljdWx0eRgDIAEoCRINCgV0",
+            "b3BpYxgEIAEoCRITCgtleHBsYW5hdGlvbhgFIAEoCRIhCgdvcHRpb25zGAYg",
+            "AygLMhAuR2VuZXJhdGVkT3B0aW9uEhQKDG1vZGVsX2Fuc3dlchgHIAEoCRIY",
+            "ChBncmFkaW5nX2NyaXRlcmlhGAggAygJIjMKD0dlbmVyYXRlZE9wdGlvbhIM",
+            "CgR0ZXh0GAEgASgJEhIKCmlzX2NvcnJlY3QYAiABKAgykwEKDUV4YW1BSVNl",
+            "cnZpY2USOwoMSW5kZXhMZWN0dXJlEhQuSW5kZXhMZWN0dXJlUmVxdWVzdBoV",
+            "LkluZGV4TGVjdHVyZVJlc3BvbnNlEkUKDEdlbmVyYXRlRXhhbRIZLkdlbmVy",
+            "YXRlUXVlc3Rpb25zUmVxdWVzdBoaLkdlbmVyYXRlUXVlc3Rpb25zUmVzcG9u",
+            "c2VCHqoCG1JldmlzaW8uSW5mcmFzdHJ1Y3R1cmUuR3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.IndexLectureRequest), global::Revisio.Infrastructure.Grpc.IndexLectureRequest.Parser, new[]{ "LectureId", "CourseId", "UserId", "Content" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.IndexLectureResponse), global::Revisio.Infrastructure.Grpc.IndexLectureResponse.Parser, new[]{ "Success", "ErrorMessage", "ChunksIndexed" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.LectureContent), global::Revisio.Infrastructure.Grpc.LectureContent.Parser, new[]{ "LectureId", "Content", "QuestionsCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.LectureContent), global::Revisio.Infrastructure.Grpc.LectureContent.Parser, new[]{ "LectureId", "QuestionsCount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.DifficultyBreakdown), global::Revisio.Infrastructure.Grpc.DifficultyBreakdown.Parser, new[]{ "Easy", "Medium", "Hard" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.TypeBreakdown), global::Revisio.Infrastructure.Grpc.TypeBreakdown.Parser, new[]{ "Mcq", "Essay", "TrueFalse" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Revisio.Infrastructure.Grpc.GenerateQuestionsRequest), global::Revisio.Infrastructure.Grpc.GenerateQuestionsRequest.Parser, new[]{ "Lectures", "TotalQuestions", "DifficultyBreakdown", "TypeBreakdown" }, null, null, null, null),
@@ -685,7 +684,6 @@ namespace Revisio.Infrastructure.Grpc {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LectureContent(LectureContent other) : this() {
       lectureId_ = other.lectureId_;
-      content_ = other.content_;
       questionsCount_ = other.questionsCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -705,18 +703,6 @@ namespace Revisio.Infrastructure.Grpc {
       get { return lectureId_; }
       set {
         lectureId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "content" field.</summary>
-    public const int ContentFieldNumber = 2;
-    private string content_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Content {
-      get { return content_; }
-      set {
-        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -748,7 +734,6 @@ namespace Revisio.Infrastructure.Grpc {
         return true;
       }
       if (LectureId != other.LectureId) return false;
-      if (Content != other.Content) return false;
       if (QuestionsCount != other.QuestionsCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -758,7 +743,6 @@ namespace Revisio.Infrastructure.Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (LectureId.Length != 0) hash ^= LectureId.GetHashCode();
-      if (Content.Length != 0) hash ^= Content.GetHashCode();
       if (QuestionsCount != 0) hash ^= QuestionsCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -782,10 +766,6 @@ namespace Revisio.Infrastructure.Grpc {
         output.WriteRawTag(10);
         output.WriteString(LectureId);
       }
-      if (Content.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Content);
-      }
       if (QuestionsCount != 0) {
         output.WriteRawTag(24);
         output.WriteInt32(QuestionsCount);
@@ -804,10 +784,6 @@ namespace Revisio.Infrastructure.Grpc {
         output.WriteRawTag(10);
         output.WriteString(LectureId);
       }
-      if (Content.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Content);
-      }
       if (QuestionsCount != 0) {
         output.WriteRawTag(24);
         output.WriteInt32(QuestionsCount);
@@ -824,9 +800,6 @@ namespace Revisio.Infrastructure.Grpc {
       int size = 0;
       if (LectureId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(LectureId);
-      }
-      if (Content.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
       }
       if (QuestionsCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(QuestionsCount);
@@ -845,9 +818,6 @@ namespace Revisio.Infrastructure.Grpc {
       }
       if (other.LectureId.Length != 0) {
         LectureId = other.LectureId;
-      }
-      if (other.Content.Length != 0) {
-        Content = other.Content;
       }
       if (other.QuestionsCount != 0) {
         QuestionsCount = other.QuestionsCount;
@@ -875,10 +845,6 @@ namespace Revisio.Infrastructure.Grpc {
             LectureId = input.ReadString();
             break;
           }
-          case 18: {
-            Content = input.ReadString();
-            break;
-          }
           case 24: {
             QuestionsCount = input.ReadInt32();
             break;
@@ -904,10 +870,6 @@ namespace Revisio.Infrastructure.Grpc {
             break;
           case 10: {
             LectureId = input.ReadString();
-            break;
-          }
-          case 18: {
-            Content = input.ReadString();
             break;
           }
           case 24: {

@@ -1,30 +1,36 @@
-﻿using MediatR;
+﻿using MassTransit;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Revisio.Application.Common.Exceptions;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
+using Revisio.Application.Events;
 using Revisio.Domain.Entities;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
+using System.Text.Json;
 namespace Revisio.Application.Lecture.Command.UploadLecture
 {
-    public class UploadLectureCommandHandler : IRequestHandler<UploadLectureCommand, Response<Guid>>
+    public class UploadLectureCommandHandler : IRequestHandler<UploadLectureCommand,Revisio.Application.Common.Models.Response<Guid>>
     {
         private readonly IAppDbContext context;
         private readonly ICurrentUserService currentUser;
         private readonly IUploadToCloud uploadToCloud;
         private readonly ITextExtractorFactory textExtractorFactory;
+        private readonly IPublishEndpoint publishEndpoint;
         public UploadLectureCommandHandler(IAppDbContext context
             ,ICurrentUserService currentUser
             ,IUploadToCloud uploadToCloud
-            , ITextExtractorFactory textExtractorFactory)
+            , ITextExtractorFactory textExtractorFactory
+            ,IPublishEndpoint publishEndpoint)
         {
             this.context = context;
             this.currentUser = currentUser;
             this.uploadToCloud = uploadToCloud;
             this.textExtractorFactory = textExtractorFactory;
+            this.publishEndpoint = publishEndpoint;
         }
-        public async Task<Response<Guid>> Handle(UploadLectureCommand request, CancellationToken cancellationToken)
+        public async Task<Revisio.Application.Common.Models.Response<Guid>> Handle(UploadLectureCommand request, CancellationToken cancellationToken)
         {
             var user = currentUser.UserId;
             if (user == null)
@@ -77,11 +83,25 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
                 Content = content,
                 Id = Guid.NewGuid()
             };
-
+            var x = new UploadLectureEvent()
+            {
+                Content = lecture.Content,
+                CourseId = lecture.CourseId,
+                LectureId = lecture.Id,
+                UserId = currentUser.UserId
+            };
+          
             await context.Lectures.AddAsync(lecture, cancellationToken);
             await context.SaveChangesAsync(cancellationToken);
+            await publishEndpoint.Publish(new UploadLectureEvent()
+            {
+                Content = lecture.Content,
+                CourseId = lecture.CourseId,
+                LectureId = lecture.Id,
+                UserId = currentUser.UserId
+            }, cancellationToken);
 
-            return new Response<Guid>() { Data = lecture.Id, Success = true, Message = "Uploaded Successfully" };
+            return new Revisio.Application.Common.Models.Response<Guid>() { Data = lecture.Id, Success = true, Message = "Uploaded Successfully" };
         }
     }
 }

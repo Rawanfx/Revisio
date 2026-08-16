@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Domain.Entities;
 using System.Reflection.Emit;
+using MassTransit.EntityFrameworkCoreIntegration;
+using MassTransit;
 
 namespace Revisio.Infrastructure.Data
 {
@@ -23,6 +25,8 @@ namespace Revisio.Infrastructure.Data
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+            builder.AddOutboxMessageEntity();
+            builder.AddOutboxStateEntity();
             builder.Entity<GenerationRequestLecture>()
                 .HasKey(x => new { x.LectureId, x.GenerationRequestId });
             

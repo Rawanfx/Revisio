@@ -1,5 +1,6 @@
 ﻿using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
+using Revisio.Application.Events;
 using Revisio.Infrastructure.Grpc;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -32,7 +33,6 @@ namespace Revisio.Infrastructure.Services
             request.Lectures.AddRange(dto.Lectures.Select(l => new LectureContent
             {
                 LectureId = l.LectureId.ToString(),   // Guid → string
-                Content = l.Content,
                 QuestionsCount = l.QuestionsCount
             }));
             var response =await  client.GenerateExamAsync(request, cancellationToken: cancellationToken);
@@ -54,6 +54,19 @@ namespace Revisio.Infrastructure.Services
                 }).ToList()
             }).ToList();
             return new GenerateQuestionsAIServiceResponseDto() { Success = true, Questions = questions };
+        }
+
+        public async Task<bool> IndexLectureAsync(string content, string userId, Guid lectureId, Guid courseId,CancellationToken cancellationToken)
+        {
+            var request = new IndexLectureRequest()
+            {
+                Content = content,
+                CourseId = courseId.ToString(),
+                LectureId = lectureId.ToString(),
+                UserId=userId
+            };
+          var response =  await client.IndexLectureAsync(request,cancellationToken: cancellationToken);
+            return response.Success;
         }
     }
 }

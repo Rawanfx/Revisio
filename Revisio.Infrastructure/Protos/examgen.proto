@@ -23,7 +23,6 @@ service ExamAIService{
 
     message LectureContent {
         string lecture_id = 1;
-        string content = 2;
         int32 questions_count = 3;
     }
 
