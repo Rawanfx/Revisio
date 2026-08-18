@@ -16,7 +16,7 @@
     public class DifficultyBreakdownDto
     {
         public int Easy { get; set; }
-        public int Meduim { get; set; }
+        public int Medium { get; set; }
         public int Hard { get; set; }
     }
     public class TypeBreakdownDto

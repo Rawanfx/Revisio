@@ -1,21 +1,24 @@
-﻿using Revisio.Domain.Enums;
+﻿using Revisio.Domain.Entities;
+using Revisio.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Revisio.Domain.Entities
+namespace Revisio.Domain.Entities;
+public class Questions
 {
-    public class Questions
-    {
-        [Key]
-        public Guid Id { get; set; }
-        public string Text { get; set; }
-        public string Explantion { get; set; }
-        public string Topic { get; set; }
-        [ForeignKey(nameof(GenerationRequest))]
-        public Guid GenrationRequestId { get; set; }
-        public QuestionType Type { get; set; }
-        public QuestionDifficulty Difficulty { get; set; }
-        public GenerationRequest GenerationRequest { get; set; }
-        public DateTime CreateAt { get; set; } = DateTime.UtcNow;
-        public ICollection<QuestionOptions> QuestionOptions { get; set; } = new List<QuestionOptions>();
-    }
+    [Key]
+    public Guid Id { get; set; }
+    public string Text { get; set; }
+    public string Explanation { get; set; }
+    public string Topic { get; set; }
+    public string? ModelAnswer { get; set; }              
+    public List<string>? GradingCriteria { get; set; }    
+    [ForeignKey(nameof(GenerationRequest))]
+    public Guid GenerationRequestId { get; set; }
+    public QuestionType Type { get; set; }
+    public QuestionDifficulty Difficulty { get; set; }
+    public GenerationRequest GenerationRequest { get; set; }
+    public DateTime CreateAt { get; set; } = DateTime.UtcNow;
+    public ICollection<QuestionOptions> QuestionOptions { get; set; } = new List<QuestionOptions>();
+
+    public int Index { get; set; }
 }

@@ -20,7 +20,7 @@ namespace Revisio.Infrastructure.Services
                 {
                     Easy = dto.DifficultyBreakdown.Easy,
                     Hard = dto.DifficultyBreakdown.Hard,
-                    Medium = dto.DifficultyBreakdown.Meduim
+                    Medium = dto.DifficultyBreakdown.Medium
                 },
                 TotalQuestions = dto.TotalQuestion,
                 TypeBreakdown = new TypeBreakdown()

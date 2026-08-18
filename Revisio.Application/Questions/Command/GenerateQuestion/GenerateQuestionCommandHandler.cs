@@ -43,7 +43,7 @@ namespace Revisio.Application.Questions.Command.GenerateQuestion
                 GenrateExamStatus = GenrateExamStatus.Pending,
                 HardQuestionNum = request.GenerateQuestionRequestDto.Hard,
                 MCQQuestionNum = request.GenerateQuestionRequestDto.MCQ,
-                MeduimQuestionNum = request.GenerateQuestionRequestDto.Meduim,
+                MediumQuestionNum = request.GenerateQuestionRequestDto.Medium,
                 TotalQuestions = request.GenerateQuestionRequestDto.TotalQuestions,
                 TrueFalseQuestionNum = request.GenerateQuestionRequestDto.TrueFalse
             };
@@ -59,12 +59,12 @@ namespace Revisio.Application.Questions.Command.GenerateQuestion
            
             await context.GenerationRequests.AddAsync(generationRequest);
             await context.GenerationRequestLectures.AddRangeAsync(generationRequestLecture);
-            await context.SaveChangesAsync();
             
             await publishEndpoint.Publish(new QuestionGeneratedRequest
             {
                 GenerateRequestId = generationRequest.Id
             });
+            await context.SaveChangesAsync();
             return new Common.Models.Response<Guid>() { Success = true, Data = generationRequest.Id };
 
         }

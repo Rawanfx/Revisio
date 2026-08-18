@@ -9,7 +9,7 @@ namespace Revisio.Application.Questions.Dto
         public int TotalQuestions { get; set; }
         public ExamMode ExamMode { get; set; }
         public int Easy { get; set; }
-        public int Meduim { get; set; }
+        public int Medium { get; set; }
         public int Hard { get; set; }
         public int MCQ { get; set; }
         public int Essay { get; set; }

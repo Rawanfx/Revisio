@@ -23,7 +23,7 @@ namespace Revisio.Application.Questions.Command.GenerateQuestion
                 .GreaterThanOrEqualTo(0);
             RuleFor(x => x.GenerateQuestionRequestDto.MCQ)
                 .GreaterThanOrEqualTo(0);
-            RuleFor(x => x.GenerateQuestionRequestDto.Meduim)
+            RuleFor(x => x.GenerateQuestionRequestDto.Medium)
                 .GreaterThanOrEqualTo(0);
             RuleFor(x => x.GenerateQuestionRequestDto.LectureIds)
                 .NotEmpty();
@@ -32,7 +32,7 @@ namespace Revisio.Application.Questions.Command.GenerateQuestion
         private bool IsValidTotalQ(GenerateQuestionRequestDto dto)
         {
             var total = dto.TrueFalse + dto.MCQ + dto.Essay;
-            var totalMode = dto.Easy + dto.Meduim + dto.Hard;
+            var totalMode = dto.Easy + dto.Medium + dto.Hard;
             return (total == dto.TotalQuestions && totalMode == dto.TotalQuestions);
         }
     }

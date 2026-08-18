@@ -316,7 +316,7 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<int>("MCQQuestionNum")
                         .HasColumnType("int");
 
-                    b.Property<int>("MeduimQuestionNum")
+                    b.Property<int>("MediumQuestionNum")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalQuestions")

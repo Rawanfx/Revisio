@@ -18,7 +18,7 @@ namespace Revisio.Domain.Entities
         public int TrueFalseQuestionNum { get; set; }
         public int MCQQuestionNum { get; set; }
         public int EasyQuestionNum { get; set; }
-        public int MeduimQuestionNum { get; set; }
+        public int MediumQuestionNum { get; set; }
         public int HardQuestionNum { get; set; }
         public GenrateExamStatus GenrateExamStatus { get; set; }
         public ICollection<GenerationRequestLecture> SelectedLectures { get; set; } = new List<GenerationRequestLecture>();

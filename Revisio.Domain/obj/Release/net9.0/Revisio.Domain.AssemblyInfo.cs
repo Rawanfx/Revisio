@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Revisio.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ecf6eeabc5d12989a9c8d838ed2bc981799d5b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5db55ca20766af717026d8a6d73c738548adf3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Revisio.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Revisio.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,2 +1,0 @@
-obj\Debug\net9.0\Protos/Examgen.cs \
-obj\Debug\net9.0\Protos/ExamgenGrpc.cs: Protos/examgen.proto

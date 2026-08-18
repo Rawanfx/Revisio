@@ -479,7 +479,7 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<int>("MCQQuestionNum")
                         .HasColumnType("int");
 
-                    b.Property<int>("MeduimQuestionNum")
+                    b.Property<int>("MediumQuestionNum")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalQuestions")
@@ -620,12 +620,21 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<int>("Difficulty")
                         .HasColumnType("int");
 
-                    b.Property<string>("Explantion")
+                    b.Property<string>("Explanation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("GenrationRequestId")
+                    b.Property<Guid>("GenerationRequestId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.PrimitiveCollection<string>("GradingCriteria")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ModelAnswer")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Text")
                         .IsRequired()
@@ -640,7 +649,7 @@ namespace Revisio.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenrationRequestId");
+                    b.HasIndex("GenerationRequestId");
 
                     b.ToTable("Questions");
                 });
@@ -786,7 +795,7 @@ namespace Revisio.Infrastructure.Migrations
                 {
                     b.HasOne("Revisio.Domain.Entities.GenerationRequest", "GenerationRequest")
                         .WithMany()
-                        .HasForeignKey("GenrationRequestId")
+                        .HasForeignKey("GenerationRequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

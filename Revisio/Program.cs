@@ -97,7 +97,7 @@ builder.Services.AddMassTransit(x =>
     });
     x.UsingRabbitMq ((context, cfg) =>
     {
-        cfg.Host(new Uri("amqps://glwcwbjx:BOuqBBiSYHe17WiWY4xDfU3Kcy3E0sCg@capybara.lmq.cloudamqp.com/glwcwbjx"));
+        cfg.Host(new Uri(builder.Configuration["RabbitMQ:CS"]));
         cfg.ConfigureEndpoints(context);
     });
 });

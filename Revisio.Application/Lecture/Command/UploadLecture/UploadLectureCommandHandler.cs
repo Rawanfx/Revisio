@@ -83,16 +83,6 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
                 Content = content,
                 Id = Guid.NewGuid()
             };
-            var x = new UploadLectureEvent()
-            {
-                Content = lecture.Content,
-                CourseId = lecture.CourseId,
-                LectureId = lecture.Id,
-                UserId = currentUser.UserId
-            };
-          
-            await context.Lectures.AddAsync(lecture, cancellationToken);
-            await context.SaveChangesAsync(cancellationToken);
             await publishEndpoint.Publish(new UploadLectureEvent()
             {
                 Content = lecture.Content,
@@ -101,6 +91,9 @@ namespace Revisio.Application.Lecture.Command.UploadLecture
                 UserId = currentUser.UserId
             }, cancellationToken);
 
+          
+            await context.Lectures.AddAsync(lecture, cancellationToken);
+            await context.SaveChangesAsync(cancellationToken);
             return new Revisio.Application.Common.Models.Response<Guid>() { Data = lecture.Id, Success = true, Message = "Uploaded Successfully" };
         }
     }

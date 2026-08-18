@@ -48,7 +48,7 @@ namespace Revisio.Infrastructure.Consumers
                     DifficultyBreakdown = new DifficultyBreakdownDto
                     {
                         Easy = request.EasyQuestionNum,
-                        Meduim = request.MeduimQuestionNum,
+                        Medium = request.MediumQuestionNum,
                         Hard = request.HardQuestionNum
                     },
                     TypeBreakdown = new TypeBreakdownDto
@@ -61,14 +61,16 @@ namespace Revisio.Infrastructure.Consumers
 
                 var generatedQuestions = await aiServiceClient.GenerateQuestions(aiRequestDto, ct);
 
+                int index = 1;
+
                 foreach (var gq in generatedQuestions.Questions)
                 {
                     var question = new Questions
                     {
                         Id = Guid.NewGuid(),
-                        GenrationRequestId = request.Id,
+                        GenerationRequestId = request.Id,
                         Text = gq.Text,
-                        Explantion = gq.Explanation,
+                        Explanation = gq.Explanation,
                         Topic = gq.Topic,
                         Type = Enum.Parse<QuestionType>(gq.Type, ignoreCase: true),
                         Difficulty = Enum.Parse<QuestionDifficulty>(gq.Difficulty, ignoreCase: true),
@@ -77,10 +79,11 @@ namespace Revisio.Infrastructure.Consumers
                             Id = Guid.NewGuid(),
                             Option = o.Text,
                             IsCorrect = o.IsCorrect
-                        }).ToList()
-                        ,
+                        }).ToList(),
+                        Index=index
                     };
                     dbContext.Questions.Add(question);
+                    index++;
                 }
 
                 request.GenrateExamStatus = GenrateExamStatus.Completed;
@@ -101,7 +104,6 @@ namespace Revisio.Infrastructure.Consumers
             return lectures.Select((lecture, index) => new LectureContentDto
             {
                 LectureId = lecture.Id,
-                Content = lecture.Content,
                 QuestionsCount = baseCount + (index < remainder ? 1 : 0)
             }).ToList();
         }

@@ -23,7 +23,7 @@ namespace Revisio.Infrastructure.Migrations
                     TrueFalseQuestionNum = table.Column<int>(type: "int", nullable: false),
                     MCQQuestionNum = table.Column<int>(type: "int", nullable: false),
                     EasyQuestionNum = table.Column<int>(type: "int", nullable: false),
-                    MeduimQuestionNum = table.Column<int>(type: "int", nullable: false),
+                    MediumQuestionNum = table.Column<int>(type: "int", nullable: false),
                     HardQuestionNum = table.Column<int>(type: "int", nullable: false),
                     GenrateExamStatus = table.Column<int>(type: "int", nullable: false)
                 },

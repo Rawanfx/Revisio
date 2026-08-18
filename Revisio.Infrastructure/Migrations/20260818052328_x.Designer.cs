@@ -12,8 +12,8 @@ using Revisio.Infrastructure.Data;
 namespace Revisio.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260816232209_Add outbox pattern")]
-    partial class Addoutboxpattern
+    [Migration("20260818052328_x")]
+    partial class x
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -623,12 +623,18 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<int>("Difficulty")
                         .HasColumnType("int");
 
-                    b.Property<string>("Explantion")
+                    b.Property<string>("Explanation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("GenrationRequestId")
+                    b.Property<Guid>("GenerationRequestId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.PrimitiveCollection<string>("GradingCriteria")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModelAnswer")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Text")
                         .IsRequired()
@@ -643,7 +649,7 @@ namespace Revisio.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenrationRequestId");
+                    b.HasIndex("GenerationRequestId");
 
                     b.ToTable("Questions");
                 });
@@ -789,7 +795,7 @@ namespace Revisio.Infrastructure.Migrations
                 {
                     b.HasOne("Revisio.Domain.Entities.GenerationRequest", "GenerationRequest")
                         .WithMany()
-                        .HasForeignKey("GenrationRequestId")
+                        .HasForeignKey("GenerationRequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
