@@ -20,6 +20,8 @@ namespace Revisio.Infrastructure.Data
         public DbSet<Questions> Questions => Set<Questions>();
         public DbSet<QuestionOptions> QuestionOptions => Set<QuestionOptions>();
         public DbSet<GenerationRequestLecture> GenerationRequestLectures => Set<GenerationRequestLecture>();
+        public DbSet<ExamSession> ExamSessions => Set<ExamSession>();
+        public DbSet<ExamSessionAnswer> ExamSessionAnswers => Set<ExamSessionAnswer>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

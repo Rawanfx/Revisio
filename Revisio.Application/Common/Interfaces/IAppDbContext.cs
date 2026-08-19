@@ -14,6 +14,8 @@ namespace Revisio.Application.Common.Interfaces
         DbSet<GenerationRequestLecture>GenerationRequestLectures { get; } 
         DbSet<Revisio.Domain.Entities.Questions> Questions { get; }
         DbSet<QuestionOptions> QuestionOptions { get; }
+        DbSet<ExamSession> ExamSessions { get; }
+        DbSet<ExamSessionAnswer> ExamSessionAnswers { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

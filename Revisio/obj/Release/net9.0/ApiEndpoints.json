@@ -282,5 +282,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.QuestionsController",
+    "Method": "StartQuiz",
+    "RelativePath": "api/Questions/start-quiz",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Revisio.Application.Questions.Command.StartQuiz.StartQuizCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

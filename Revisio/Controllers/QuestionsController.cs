@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Questions.Command.GenerateQuestion;
+using Revisio.Application.Questions.Command.StartQuiz;
 
 namespace Revisio.API.Controllers
 {
@@ -21,6 +22,13 @@ namespace Revisio.API.Controllers
         {
             var result = await mediator.Send(command);
             return Created(string.Empty,result);
+        }
+        [HttpPost("exam-session")]
+        [Authorize(Roles = "Student")]
+        public async Task<IActionResult> StartQuiz([FromBody] StartQuizCommand command)
+        {
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
     }
 }
