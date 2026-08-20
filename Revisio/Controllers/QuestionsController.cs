@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Questions.Command.GenerateQuestion;
 using Revisio.Application.Questions.Command.StartQuiz;
+using Revisio.Application.Questions.Command.SubmitAnswer;
 
 namespace Revisio.API.Controllers
 {
@@ -23,11 +24,18 @@ namespace Revisio.API.Controllers
             var result = await mediator.Send(command);
             return Created(string.Empty,result);
         }
-        [HttpPost("exam-session")]
+        [HttpPost("exam-sessions")]
         [Authorize(Roles = "Student")]
         public async Task<IActionResult> StartQuiz([FromBody] StartQuizCommand command)
         {
             var result = await mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpPost("submit-answer")]
+        [Authorize(Roles = "Student")]
+        public async Task <IActionResult>SubmitAndNextQuestions (SubmitAndNextQuestionCommand request)
+        {
+            var result = await mediator.Send(request);
             return Ok(result);
         }
     }

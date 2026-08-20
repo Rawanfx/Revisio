@@ -18,6 +18,7 @@ namespace Revisio.Domain.Entities
         public decimal ? TotalScore { get; set; }
         public int TotalQuestions { get; set; }
         public int CorrectAnswersCount { get; set; }
+        public DateTime CompletedAt { get; set; }
         public ICollection<ExamSessionAnswer> ExamSessionAnswers => new List<ExamSessionAnswer>();
     }
 }

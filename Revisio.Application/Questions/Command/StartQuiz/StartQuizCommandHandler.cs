@@ -48,16 +48,16 @@ namespace Revisio.Application.Questions.Command.StartQuiz
                      y.Id,
                      y.Index,
                      y.Text,
-                     List = y.QuestionOptions.Select(z => z.Option).ToList(),
+                     List = y.QuestionOptions.Select(z => z.Id).ToList(),
                      y.Type
                  }).FirstOrDefaultAsync(cancellationToken);
             if (firstq is null)
                 throw new NotFoundException("No questions found for this generation request");
 
-            startQuizResponse.Options = firstq.List;
-            startQuizResponse.Text = firstq.Text;
-            startQuizResponse.Index = firstq.Index;
-            startQuizResponse.QuestionType = firstq.Type;
+            startQuizResponse.questionData.OptionsId = firstq.List;
+            startQuizResponse.questionData.Text = firstq.Text;
+            startQuizResponse.questionData.Index = firstq.Index;
+            startQuizResponse.questionData.QuestionType = firstq.Type;
             return new Common.Models.Response<StartQuizResponse>() { Success = true,Data=startQuizResponse,Message="Quiz Started" };
 
         }

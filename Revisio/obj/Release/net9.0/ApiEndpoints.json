@@ -286,7 +286,7 @@
   {
     "ContainingType": "Revisio.API.Controllers.QuestionsController",
     "Method": "StartQuiz",
-    "RelativePath": "api/Questions/start-quiz",
+    "RelativePath": "api/Questions/exam-sessions",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -294,6 +294,22 @@
       {
         "Name": "command",
         "Type": "Revisio.Application.Questions.Command.StartQuiz.StartQuizCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.QuestionsController",
+    "Method": "SubmitAndNextQuestions",
+    "RelativePath": "api/Questions/submit-answer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Revisio.Application.Questions.Command.SubmitAnswer.SubmitAndNextQuestionCommand",
         "IsRequired": true
       }
     ],
