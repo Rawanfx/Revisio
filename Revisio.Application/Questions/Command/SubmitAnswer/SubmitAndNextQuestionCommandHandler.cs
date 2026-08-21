@@ -91,16 +91,27 @@ namespace Revisio.Application.Questions.Command.SubmitAnswer
             }
             else
             {
-                var nextQuestionData = await context.Questions
-          .Where(x => x.Index == newIndex && x.GenerationRequestId == request.GenerationRequestId)
-          .Select(y => new questionData
-          {
-              Index = newIndex,
-              OptionsId = y.QuestionOptions.Select(z => z.Id).ToList(),
-              QuestionType = y.Type,
-              Text = y.Text
-          })
-          .FirstOrDefaultAsync(cancellationToken);
+                var nextQuestionRaw = await context.Questions
+                    .Include(x => x.QuestionOptions)
+                    .Where(x => x.Index == newIndex && x.GenerationRequestId == request.GenerationRequestId)
+                    .Select(y => new
+                    {
+                        y.Type,
+                        y.Text,
+                        y.Id,
+                        options = y.QuestionOptions.Select(z=>new { z.Id,z.Option}).ToList()
+                    }).FirstOrDefaultAsync(cancellationToken);
+                if (nextQuestionRaw == null)
+                    throw new NotFoundException("Question not found");
+
+                var nextQuestionData = new questionData()
+                {
+                    Text = nextQuestionRaw.Text,
+                    Index = newIndex,
+                    Options = nextQuestionRaw.options.ToDictionary(x => x.Id, x => x.Option),
+                    QuestionId=nextQuestionRaw.Id,
+                    QuestionType=nextQuestionRaw.Type
+                };
                 response = new SubmitAndNextQuestionResponse
                 {
                     IsCompleted = false,
