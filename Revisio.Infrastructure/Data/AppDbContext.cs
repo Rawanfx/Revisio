@@ -22,7 +22,10 @@ namespace Revisio.Infrastructure.Data
         public DbSet<GenerationRequestLecture> GenerationRequestLectures => Set<GenerationRequestLecture>();
         public DbSet<ExamSession> ExamSessions => Set<ExamSession>();
         public DbSet<ExamSessionAnswer> ExamSessionAnswers => Set<ExamSessionAnswer>();
-
+        public async Task<int> ExecuteSqlRawAsync(string sql, params object[] parameters)
+        {
+            return await Database.ExecuteSqlRawAsync(sql, parameters);
+        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

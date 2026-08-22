@@ -314,5 +314,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.QuestionsController",
+    "Method": "TestInsert",
+    "RelativePath": "api/Questions/test-insert",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Revisio.API.Controllers.QuestionsController",
+    "Method": "TestSubmitReal",
+    "RelativePath": "api/Questions/test-submit-real",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Revisio.Application.Questions.Command.SubmitAnswer.SubmitAndNextQuestionCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

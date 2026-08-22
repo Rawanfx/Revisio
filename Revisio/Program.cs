@@ -89,12 +89,12 @@ builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<QuestionGenerationConsumer>();
     x.AddConsumer<UploadLectureConsumer>();
-    x.AddEntityFrameworkOutbox<AppDbContext>(x =>
-    {
-        x.UseSqlServer();
-        x.UseBusOutbox();
-        x.QueryDelay = TimeSpan.FromSeconds(5);
-    });
+    //x.AddEntityFrameworkOutbox<AppDbContext>(x =>
+    //{
+    //    x.UseSqlServer();
+    //  //  x.UseBusOutbox();
+    //    x.QueryDelay = TimeSpan.FromSeconds(5);
+    //});
     x.UsingRabbitMq ((context, cfg) =>
     {
         cfg.Host(new Uri(builder.Configuration["RabbitMQ:CS"]));

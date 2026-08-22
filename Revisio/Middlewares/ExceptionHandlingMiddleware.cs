@@ -2,6 +2,7 @@
 using Revisio.Application.Common.Models;
 using Serilog;
 using System;
+using System.ComponentModel.DataAnnotations;
 namespace Revisio.API.Middlewares
 {
     public class ExceptionHandlingMiddleware:IMiddleware
@@ -32,8 +33,10 @@ namespace Revisio.API.Middlewares
 
                 UnauthorizedException exception => (Response<object>.FailResponse(ex.Message),
                     StatusCodes.Status401Unauthorized),
+                ValidationException eception => (Response<object>.FailResponse(ex.Message),
+                StatusCodes.Status400BadRequest),
 
-                RepeatException exception => (Response<object>.FailResponse(ex.Message)
+            RepeatException exception => (Response<object>.FailResponse(ex.Message)
                 , StatusCodes.Status400BadRequest),
 
                 _ => (Response<object>.FailResponse("An Error Occured"), StatusCodes.Status500InternalServerError)

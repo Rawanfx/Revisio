@@ -17,5 +17,7 @@ namespace Revisio.Application.Common.Interfaces
         DbSet<ExamSession> ExamSessions { get; }
         DbSet<ExamSessionAnswer> ExamSessionAnswers { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+        Task<int> ExecuteSqlRawAsync(string sql, params object[] parameters);
+        Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry Entry(object entity);
     }
 }
