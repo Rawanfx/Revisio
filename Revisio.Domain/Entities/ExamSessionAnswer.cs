@@ -19,5 +19,6 @@ namespace Revisio.Domain.Entities
         [ForeignKey(nameof(Questions))]
         public Guid QuestionId { get; set; }
         public Questions Questions { get; set; }
+        public bool? IsCorrect { get; set; }
     }
 }

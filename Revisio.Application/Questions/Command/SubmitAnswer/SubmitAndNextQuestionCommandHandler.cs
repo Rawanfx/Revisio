@@ -20,7 +20,6 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
 
     public async Task<Response<SubmitAndNextQuestionResponse>> Handle(SubmitAndNextQuestionCommand request, CancellationToken cancellationToken)
     {
-
         var generatedRequest = await context.GenerationRequests
             .AsNoTracking()
             .FirstOrDefaultAsync(x => x.UserId == userService.UserId && x.Id == request.GenerationRequestId, cancellationToken);
@@ -30,13 +29,21 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
             .FirstOrDefaultAsync(x => x.Id == request.StartQuizId
             && x.UserId == userService.UserId
             && x.GenerationRequestId == request.GenerationRequestId, cancellationToken);
+
         var question = await context.Questions
             .AsNoTracking()
             .Include(x => x.QuestionOptions)
             .FirstOrDefaultAsync(x => x.Id == request.QuestionId && x.GenerationRequestId == request.GenerationRequestId, cancellationToken);
+
         if (question is null || startQuiz is null || generatedRequest is null)
             throw new NotFoundException("Invalid data");
 
+        var examSessionAnswerDB = await context.ExamSessionAnswers
+           .FirstOrDefaultAsync(x => x.QuestionId == request.QuestionId
+           && x.ExamSessionId == request.StartQuizId);
+
+        if (examSessionAnswerDB is not null)
+            throw new ValidationException("This question has been submitted");
         decimal? score = 0;
         bool isCorrect = false;
         switch (question.Type)
@@ -66,9 +73,11 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
             Score = 5,
             TimeTakeForAnswer = request.TimeTakeToAnswer,
             UserAnswerEsaay = request.EssayAnswer,
-            UserAnswerOption = request.McqAnswer
+            UserAnswerOption = request.McqAnswer,
         };
-        context.ExamSessionAnswers.Add(examSessionAnswer);
+        if (question.Type == QuestionType.TrueFalse || question.Type == QuestionType.MCQ)
+            examSessionAnswer.IsCorrect = isCorrect;
+        context.ExamSessionAnswers.Add(examSessionAnswerDB);
       var rowAffcted=  await context.SaveChangesAsync(cancellationToken);
         Console.WriteLine($"Row affected {rowAffcted}");
         int newIndex = 0;
@@ -130,7 +139,7 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
 
         return new Response<SubmitAndNextQuestionResponse>
         {
-           // Data = response,
+            Data = response,
             Success = true
         };
     }

@@ -164,6 +164,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Revisio.API.Controllers.ExamSessionsController",
+    "Method": "ExamResult",
+    "RelativePath": "api/ExamSessions/{examSessionId}/result",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ExamSessionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Revisio.API.Controllers.LectureController",
     "Method": "Upload",
     "RelativePath": "api/Lecture",
@@ -293,7 +309,7 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "Revisio.Application.Questions.Command.StartQuiz.StartQuizCommand",
+        "Type": "Revisio.Application.Questions.Command.StartQuiz.Command.StartQuizCommand",
         "IsRequired": true
       }
     ],
@@ -323,22 +339,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Revisio.API.Controllers.QuestionsController",
-    "Method": "TestSubmitReal",
-    "RelativePath": "api/Questions/test-submit-real",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "Revisio.Application.Questions.Command.SubmitAnswer.SubmitAndNextQuestionCommand",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   }
 ]

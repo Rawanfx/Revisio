@@ -1,10 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Questions.Command.GenerateQuestion;
-using Revisio.Application.Questions.Command.StartQuiz;
+using Revisio.Application.Questions.Command.StartQuiz.Command;
 using Revisio.Application.Questions.Command.SubmitAnswer;
 using Revisio.Domain.Entities;
 
@@ -61,12 +60,6 @@ namespace Revisio.API.Controllers
 
             return Ok(new { rows, state = context.Entry(testAnswer).State.ToString() });
         }
-        [HttpPost("test-submit-real")]
-        [Authorize(Roles = "Student")]
-        public async Task<IActionResult> TestSubmitReal([FromServices] IMediator mediator, [FromBody] SubmitAndNextQuestionCommand command)
-        {
-            var result = await mediator.Send(command);
-            return Ok(result);
-        }
+      
     }
 }

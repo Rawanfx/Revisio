@@ -8,9 +8,9 @@ using Revisio.Application.Questions.Dto;
 using Revisio.Domain.Entities;
 using System.Runtime.InteropServices;
 
-namespace Revisio.Application.Questions.Command.StartQuiz
+namespace Revisio.Application.Questions.Command.StartQuiz.Command
 {
-    public class StartQuizCommandHandler : IRequestHandler<StartQuizCommand,Revisio.Application.Common.Models. Response<StartQuizResponse>>
+    public class StartQuizCommandHandler : IRequestHandler<StartQuizCommand,Common.Models. Response<StartQuizResponse>>
     {
         private readonly IAppDbContext context;
         private readonly ICurrentUserService currentUser;
@@ -20,7 +20,7 @@ namespace Revisio.Application.Questions.Command.StartQuiz
             this.currentUser = currentUser;
             this.context = context;
         }
-        public async Task<Revisio.Application.Common.Models.Response<StartQuizResponse>> Handle(StartQuizCommand request, CancellationToken cancellationToken)
+        public async Task<Common.Models.Response<StartQuizResponse>> Handle(StartQuizCommand request, CancellationToken cancellationToken)
         {
             var generationRequest = await context.GenerationRequests
                 .FirstOrDefaultAsync(x => x.UserId == currentUser.UserId && x.Id==request.GenerationRequestId);
