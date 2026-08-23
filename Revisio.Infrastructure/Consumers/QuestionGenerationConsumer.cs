@@ -80,7 +80,8 @@ namespace Revisio.Infrastructure.Consumers
                             Option = o.Text,
                             IsCorrect = o.IsCorrect
                         }).ToList(),
-                        Index=index
+                        Index=index,
+                        LectureId =Guid.Parse( gq.LectureId)
                     };
                     dbContext.Questions.Add(question);
                     index++;

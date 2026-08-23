@@ -1,7 +1,6 @@
 ﻿using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
 using Revisio.Application.Events;
-using Revisio.Infrastructure.Grpc;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 namespace Revisio.Infrastructure.Services

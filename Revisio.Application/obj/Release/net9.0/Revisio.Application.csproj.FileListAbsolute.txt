@@ -1,6 +1,5 @@
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.deps.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.dll
-C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Domain.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Domain.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.csproj.AssemblyReference.cache
@@ -13,4 +12,5 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\refint\Revisio.Application.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.pdb
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\ref\Revisio.Application.dll

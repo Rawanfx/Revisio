@@ -22,4 +22,8 @@ public class Questions
 
     public int Index { get; set; }
     public decimal? MaxScore { get; set; }
+    [ForeignKey(nameof (Lectures))]
+
+    public Guid? LectureId { get; set; }
+    public Lectures Lectures { get; set; }
 }

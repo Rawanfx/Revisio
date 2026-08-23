@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Revisio.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using Revisio.Infrastructure.Data;
 namespace Revisio.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260822211712_add lecture id in question entity")]
+    partial class addlectureidinquestionentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -714,7 +717,7 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<int>("Index")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("LectureId")
+                    b.Property<Guid>("LectureId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal?>("MaxScore")
@@ -934,7 +937,9 @@ namespace Revisio.Infrastructure.Migrations
 
                     b.HasOne("Revisio.Domain.Entities.Lectures", "Lectures")
                         .WithMany()
-                        .HasForeignKey("LectureId");
+                        .HasForeignKey("LectureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("GenerationRequest");
 

@@ -17,6 +17,7 @@ namespace Revisio.Application.Common.Models
         public List<GeneratedOptionDto> Options { get; set; }
         public string? ModelAnswer { get; set; }                 
         public List<string>? GradingCriteria { get; set; }
+        public string LectureId { get; set; }
     }
     public class GeneratedOptionDto
     {
