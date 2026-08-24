@@ -12,10 +12,12 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
 {
     private readonly IAppDbContext context;
     private readonly ICurrentUserService userService;
-    public SubmitAndNextQuestionCommandHandler(IAppDbContext context,ICurrentUserService currentUser)
+    private readonly IExamAIGenerator examAIGenerator;
+    public SubmitAndNextQuestionCommandHandler(IAppDbContext context,ICurrentUserService currentUser,IExamAIGenerator examAIGenerator)
     {
         this.context = context;
         this.userService = currentUser;
+        this.examAIGenerator = examAIGenerator;
     }
 
     public async Task<Response<SubmitAndNextQuestionResponse>> Handle(SubmitAndNextQuestionCommand request, CancellationToken cancellationToken)
@@ -62,6 +64,15 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
             case QuestionType.Essay:
                 if (request.EssayAnswer is null)
                     throw new ValidationException("this question must have an essay answer");
+                string gradingCriteria = string.Join(',', question.GradingCriteria);
+                var gradingResult = await examAIGenerator.GradeAnswerAsync(question.LectureId.ToString(),
+                   request.EssayAnswer, question.Text,(int) question.MaxScore
+                    , question.ModelAnswer, gradingCriteria,cancellationToken);
+
+                if (!gradingResult.Success)
+                    throw new Exception($"Grading failed: {gradingResult.Error_message}");
+                score = gradingResult.Score;
+                isCorrect = gradingResult.Score >= (question.MaxScore * .6m);
                 break;
         }
 
@@ -70,15 +81,15 @@ public class SubmitAndNextQuestionCommandHandler:IRequestHandler<SubmitAndNextQu
             ExamSessionId = startQuiz.Id,
             Id = Guid.NewGuid(),
             QuestionId =question.Id,
-            Score = 5,
+            Score = score,
             TimeTakeForAnswer = request.TimeTakeToAnswer,
             UserAnswerEsaay = request.EssayAnswer,
             UserAnswerOption = request.McqAnswer,
         };
         if (question.Type == QuestionType.TrueFalse || question.Type == QuestionType.MCQ)
             examSessionAnswer.IsCorrect = isCorrect;
-        context.ExamSessionAnswers.Add(examSessionAnswerDB);
-      var rowAffcted=  await context.SaveChangesAsync(cancellationToken);
+        context.ExamSessionAnswers.Add(examSessionAnswer);
+        var rowAffcted =  await context.SaveChangesAsync(cancellationToken);
         Console.WriteLine($"Row affected {rowAffcted}");
         int newIndex = 0;
         if (generatedRequest.TotalQuestions > question.Index)
