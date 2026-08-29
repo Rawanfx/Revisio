@@ -27,12 +27,12 @@ namespace Revisio.Application.Questions.Query.TotalPerformance
                      CourseId = x.CourseId,
                      CourseName = x.Course.CourseName,
                      Score = x.ExamSession.TotalScore??0,
-                     MaxScore =x.ExamSession.ExamSessionAnswers.Sum(x=>x.Questions.MaxScore)
+                     MaxScore =x.ExamSession.TotalMaxScore
                  }).ToListAsync();
             var courseAccuracy = generatedRequest
                  .GroupBy(x => x.CourseId)
                  .Select(y => new CourseAccuracy() {
-                     Score=y.Sum(x=>x.Score),
+                     Score=y.Sum(x=>x.Score)>0?Math.Round((y.Sum(x => x.Score) / y.Sum(x => x.MaxScore)) * 100, 0) : 0,
                      CourseId = y.Select(z=>z.CourseId).FirstOrDefault(),
                      CourseName=y.Select(z=>z.CourseName).FirstOrDefault(),
                  }).ToList();
