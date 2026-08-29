@@ -476,6 +476,9 @@ namespace Revisio.Infrastructure.Migrations
                     b.Property<DateTime>("StartAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal?>("TotalMaxScore")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("TotalQuestions")
                         .HasColumnType("int");
 
@@ -488,7 +491,8 @@ namespace Revisio.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenerationRequestId");
+                    b.HasIndex("GenerationRequestId")
+                        .IsUnique();
 
                     b.HasIndex("UserId");
 
@@ -542,6 +546,9 @@ namespace Revisio.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("EasyQuestionNum")
                         .HasColumnType("int");
 
@@ -574,6 +581,8 @@ namespace Revisio.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("UserId");
 
@@ -820,8 +829,8 @@ namespace Revisio.Infrastructure.Migrations
             modelBuilder.Entity("Revisio.Domain.Entities.ExamSession", b =>
                 {
                     b.HasOne("Revisio.Domain.Entities.GenerationRequest", "GenerationRequest")
-                        .WithMany()
-                        .HasForeignKey("GenerationRequestId")
+                        .WithOne("ExamSession")
+                        .HasForeignKey("Revisio.Domain.Entities.ExamSession", "GenerationRequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -863,11 +872,19 @@ namespace Revisio.Infrastructure.Migrations
 
             modelBuilder.Entity("Revisio.Domain.Entities.GenerationRequest", b =>
                 {
+                    b.HasOne("Revisio.Domain.Entities.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Revisio.Domain.Entities.ApplicationUser", "applicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
 
                     b.Navigation("applicationUser");
                 });
@@ -955,6 +972,9 @@ namespace Revisio.Infrastructure.Migrations
 
             modelBuilder.Entity("Revisio.Domain.Entities.GenerationRequest", b =>
                 {
+                    b.Navigation("ExamSession")
+                        .IsRequired();
+
                     b.Navigation("SelectedLectures");
                 });
 

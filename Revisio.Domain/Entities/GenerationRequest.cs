@@ -22,5 +22,11 @@ namespace Revisio.Domain.Entities
         public int HardQuestionNum { get; set; }
         public GenrateExamStatus GenrateExamStatus { get; set; }
         public ICollection<GenerationRequestLecture> SelectedLectures { get; set; } = new List<GenerationRequestLecture>();
+        [ForeignKey(nameof (Course))]
+
+        public Guid CourseId { get; set; 
+        }
+        public Course Course { get; set; }
+        public ExamSession ExamSession { get; set; }
     }
 }

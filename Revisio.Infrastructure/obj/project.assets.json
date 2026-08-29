@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net9.0": {
       "AWSSDK.Core/4.0.100.8": {
@@ -6659,11 +6659,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
+      "projectUniqueName": "D:\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
       "projectName": "Revisio.Infrastructure",
-      "projectPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
+      "projectPath": "D:\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Techno Shield\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\obj\\",
+      "outputPath": "D:\\repos\\Revisio\\Revisio.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6682,10 +6682,11 @@
       },
       "frameworks": {
         "net9.0": {
+          "framework": "net9.0",
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj": {
-              "projectPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj"
+            "D:\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj": {
+              "projectPath": "D:\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj"
             }
           }
         }
@@ -6700,10 +6701,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
       "net9.0": {
+        "framework": "net9.0",
         "targetAlias": "net9.0",
         "dependencies": {
           "AWSSDK.S3": {
@@ -6795,12 +6797,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.19, 9.0.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[9.0.19, 9.0.19]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.19, 9.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

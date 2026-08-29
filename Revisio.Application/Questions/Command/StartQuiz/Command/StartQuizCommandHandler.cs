@@ -34,6 +34,10 @@ namespace Revisio.Application.Questions.Command.StartQuiz.Command
                 StartAt = DateTime.UtcNow,
                 TotalQuestions = generationRequest.TotalQuestions,
             };
+            var totalMaxScore = await context.Questions
+                .Where(x => x.GenerationRequestId == request.GenerationRequestId)
+                .SumAsync(x => x.MaxScore);
+            examSession.TotalMaxScore = totalMaxScore;
             context.ExamSessions.Add(examSession);
             await context.SaveChangesAsync(cancellationToken);
             //get first question from questions table with index =1

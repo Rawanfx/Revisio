@@ -1,5 +1,6 @@
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.deps.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Domain.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Domain.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.csproj.AssemblyReference.cache
@@ -12,5 +13,20 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\refint\Revisio.Application.dll
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.pdb
-C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio.Application\obj\Release\net9.0\ref\Revisio.Application.dll
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.csproj.AssemblyReference.cache
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.AssemblyInfoInputs.cache
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.AssemblyInfo.cs
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.csproj.CoreCompileInputs.cache
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.sourcelink.json
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.dll
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\refint\Revisio.Application.dll
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio.Application.pdb
+D:\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.deps.json
+D:\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.dll
+D:\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Application.pdb
+D:\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Domain.dll
+D:\repos\Revisio\Revisio.Application\bin\Release\net9.0\Revisio.Domain.pdb
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\Revisio..30530FCC.Up2Date
+D:\repos\Revisio\Revisio.Application\obj\Release\net9.0\ref\Revisio.Application.dll
