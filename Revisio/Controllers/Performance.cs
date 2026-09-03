@@ -1,5 +1,5 @@
 ﻿
-using MassTransit.Mediator;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Performance.CourseTopicPERFORMANCE;
@@ -15,9 +15,9 @@ namespace Revisio.API.Controllers
         public Performance (IMediator mediator) { this.mediator = mediator; }
         [HttpGet("/course/{courseId}/topics")]
         [Authorize(Roles ="Student")]
-        public async Task< IActionResult > coursePerformance(Guid courseId)
+        public async Task< IActionResult > CoursePerformance(Guid courseId)
         {
-            var response = await mediator.Send<Response<CourseTopicDto>>(new CourseTopicQuery(courseId));
+            var response = await mediator.Send(new CourseTopicQuery(courseId));
             return Ok(response);
         }
     }
