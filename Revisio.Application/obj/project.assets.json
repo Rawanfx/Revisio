@@ -1994,11 +1994,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj",
       "projectName": "Revisio.Application",
-      "projectPath": "D:\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj",
+      "projectPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj",
       "packagesPath": "C:\\Users\\Techno Shield\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\Revisio\\Revisio.Application\\obj\\",
+      "outputPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2020,8 +2020,8 @@
           "framework": "net9.0",
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\repos\\Revisio\\Revisio.Domain\\Revisio.Domain.csproj": {
-              "projectPath": "D:\\repos\\Revisio\\Revisio.Domain\\Revisio.Domain.csproj"
+            "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Domain\\Revisio.Domain.csproj": {
+              "projectPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Domain\\Revisio.Domain.csproj"
             }
           }
         }

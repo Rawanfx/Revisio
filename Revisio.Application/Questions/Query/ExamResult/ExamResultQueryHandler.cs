@@ -33,7 +33,7 @@ namespace Revisio.Application.Questions.Query.ExamResult
                 .Where(x => x.GenerationRequestId == examSession.GenerationRequestId)
                 .Select(x => x.MaxScore)
                 .ToListAsync();
-            decimal maxPossibleScore = maxPossibleScoreList.Sum(x => x??0);
+            decimal maxPossibleScore = maxPossibleScoreList.Sum(x => x);
             int totalQuestions = maxPossibleScoreList.Count();
             var correctAnswerCount = await context.ExamSessionAnswers
                 .AsNoTracking()

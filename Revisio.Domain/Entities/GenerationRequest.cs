@@ -28,5 +28,6 @@ namespace Revisio.Domain.Entities
         }
         public Course Course { get; set; }
         public ExamSession ExamSession { get; set; }
+        public ICollection<Questions> Questions { get; set; } = new List<Questions>();
     }
 }

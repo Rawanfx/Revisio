@@ -21,7 +21,7 @@ public class Questions
     public ICollection<QuestionOptions> QuestionOptions { get; set; } = new List<QuestionOptions>();
 
     public int Index { get; set; }
-    public decimal? MaxScore { get; set; }
+    public decimal MaxScore { get; set; }
     [ForeignKey(nameof (Lectures))]
 
     public Guid? LectureId { get; set; }

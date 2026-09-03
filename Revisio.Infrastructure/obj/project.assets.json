@@ -102,7 +102,7 @@
           }
         }
       },
-      "Google.Protobuf/3.36.0": {
+      "Google.Protobuf/3.36.1": {
         "type": "package",
         "compile": {
           "lib/net8.0/Google.Protobuf.dll": {
@@ -2612,14 +2612,14 @@
         "lib/net8.0/FluentValidation.xml"
       ]
     },
-    "Google.Protobuf/3.36.0": {
-      "sha512": "wDPg8sKlmA8we1bqnC9DYKwLog4PNJ4GYTWV9FkzlGvfs3kNCSt2x0Qe31SBOeBPS2JGEZ/lNfil/Bkwx18Ufg==",
+    "Google.Protobuf/3.36.1": {
+      "sha512": "77AqPEoaY1ODE+syYBHti0jXiwQq0J/fUr/fRyYhNlc9oKtH5dZZEr/OLKtdKNVG83PRnCYB2r8B80ZrObzOGQ==",
       "type": "package",
-      "path": "google.protobuf/3.36.0",
+      "path": "google.protobuf/3.36.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "google.protobuf.3.36.0.nupkg.sha512",
+        "google.protobuf.3.36.1.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net8.0/Google.Protobuf.dll",
         "lib/net8.0/Google.Protobuf.pdb",
@@ -6659,11 +6659,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
       "projectName": "Revisio.Infrastructure",
-      "projectPath": "D:\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\Revisio.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Techno Shield\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\Revisio\\Revisio.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6685,8 +6685,8 @@
           "framework": "net9.0",
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj": {
-              "projectPath": "D:\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj"
+            "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj": {
+              "projectPath": "C:\\Users\\Techno Shield\\source\\repos\\Revisio\\Revisio.Application\\Revisio.Application.csproj"
             }
           }
         }

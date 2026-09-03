@@ -1,0 +1,8 @@
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.csproj.AssemblyReference.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.AssemblyInfoInputs.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.AssemblyInfo.cs
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.csproj.CoreCompileInputs.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.sourcelink.json
