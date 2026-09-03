@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Revisio.Application.Questions.Query.ExamResult;
+using Revisio.Application.Performance.Query.ExamResult;
 
 namespace Revisio.API.Controllers
 {

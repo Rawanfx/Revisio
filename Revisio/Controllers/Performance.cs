@@ -2,9 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Revisio.Application.Performance.CourseTopicPERFORMANCE;
-using Revisio.Application.Performance.Dto;
-using Revisio.Application.Common.Models;
+using Revisio.Application.Performance.Query.CourseTopicPERFORMANCE;
 namespace Revisio.API.Controllers
 {
     [Controller]
