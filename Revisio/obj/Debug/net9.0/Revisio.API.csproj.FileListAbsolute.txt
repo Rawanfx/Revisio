@@ -236,3 +236,5 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\refint\Revi
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.genruntimeconfig.cache
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\ref\Revisio.API.dll
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\appsettings.json

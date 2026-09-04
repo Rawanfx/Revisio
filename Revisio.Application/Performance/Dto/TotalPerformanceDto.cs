@@ -1,4 +1,4 @@
-﻿namespace Revisio.Application.Questions.Dto
+﻿namespace Revisio.Application.Performance.Dto
 {
     public class TotalPerformanceDto
     {

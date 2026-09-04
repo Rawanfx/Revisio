@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Performance.Query.CourseTopicPERFORMANCE;
+using Revisio.Application.Performance.Query.ExamResult;
+using System.Net.WebSockets;
 namespace Revisio.API.Controllers
 {
     [Controller]
@@ -16,6 +18,13 @@ namespace Revisio.API.Controllers
         public async Task< IActionResult > CoursePerformance(Guid courseId)
         {
             var response = await mediator.Send(new CourseTopicQuery(courseId));
+            return Ok(response);
+        }
+        [HttpGet("/result/{ExamSessionId}")]
+        [Authorize(Roles = "Student")]
+        public async Task <IActionResult>ExamResult([FromRoute] ExamResultQuery query)
+        {
+            var response = await mediator.Send(query);
             return Ok(response);
         }
     }

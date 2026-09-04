@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Auth\Query\" />
-    <Folder Include="Questions\Query\" />
   </ItemGroup>
 
 </Project>

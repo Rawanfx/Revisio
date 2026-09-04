@@ -1,6 +1,6 @@
 ﻿using Revisio.Domain.Enums;
 
-namespace Revisio.Application.Questions.Dto
+namespace Revisio.Application.Performance.Dto
 {
     public class ExamResultDto
     {

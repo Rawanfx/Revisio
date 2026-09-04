@@ -1,10 +1,10 @@
 ﻿using Revisio.Application.Common.Models;
 using MediatR;
-using Revisio.Application.Questions.Dto;
 using Revisio.Application.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Revisio.Application.Common.Exceptions;
 using System.ComponentModel.DataAnnotations;
+using Revisio.Application.Performance.Dto;
 
 namespace Revisio.Application.Performance.Query.ExamResult
 {

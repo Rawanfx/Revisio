@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
-using Revisio.Application.Questions.Dto;
+using Revisio.Application.Performance.Dto;
 
 namespace Revisio.Application.Performance.Query.TotalPerformance
 {
