@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Performance.Query.CourseTopicPERFORMANCE;
 using Revisio.Application.Performance.Query.ExamResult;
+using Revisio.Application.Performance.Query.WeakTopics;
 using System.Net.WebSockets;
 namespace Revisio.API.Controllers
 {
@@ -23,6 +24,13 @@ namespace Revisio.API.Controllers
         [HttpGet("/result/{ExamSessionId}")]
         [Authorize(Roles = "Student")]
         public async Task <IActionResult>ExamResult([FromRoute] ExamResultQuery query)
+        {
+            var response = await mediator.Send(query);
+            return Ok(response);
+        }
+        [HttpGet("{courseId}/needs-review")]
+        [Authorize (Roles ="Student")]
+        public async Task<IActionResult> Review([FromRoute]WeakTopicQuery query)
         {
             var response = await mediator.Send(query);
             return Ok(response);
