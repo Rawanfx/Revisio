@@ -20,5 +20,6 @@ namespace Revisio.Domain.Entities
         public Guid QuestionId { get; set; }
         public Questions Questions { get; set; }
         public bool? IsCorrect { get; set; }
+        public DateTime SubmitedAt { get; set; } = DateTime.UtcNow;
     }
 }
