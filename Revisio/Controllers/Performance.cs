@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Revisio.Application.Performance.Query.Attendence;
 using Revisio.Application.Performance.Query.CourseTopicPERFORMANCE;
 using Revisio.Application.Performance.Query.ExamResult;
+using Revisio.Application.Performance.Query.GeneratePersonalizedSummary;
 using Revisio.Application.Performance.Query.WeakTopics;
 namespace Revisio.API.Controllers
 {
@@ -38,6 +39,13 @@ namespace Revisio.API.Controllers
         [HttpGet("{courseId}/attendence")]
         [Authorize(Roles = "Student")]
         public async Task<IActionResult>Attendence([FromRoute] AttendenceQuery query)
+        {
+            var response = await mediator.Send(query);
+            return Ok(response);
+        }
+        [HttpGet("{courseId}/pre-exam-summary")]
+        [Authorize(Roles = "Student")]
+        public async Task<IActionResult>GeneratePreExamSummary([FromRoute] GeneratePersonalizedSummaryQuery query)
         {
             var response = await mediator.Send(query);
             return Ok(response);
