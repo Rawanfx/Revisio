@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Revisio.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89241e6c649ffe1850807d0fe9a709f0b4898413")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0e5c30dc2e8496612e49636dfad34bfbeb2ded6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Revisio.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Revisio.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

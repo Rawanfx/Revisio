@@ -30,9 +30,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers()
     .AddJsonOptions(x=>x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .CreateLogger();
+//Log.Logger = new LoggerConfiguration()
+//    .ReadFrom.Configuration(builder.Configuration)
+//    .CreateLogger();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("Jwt"));
@@ -42,6 +42,7 @@ builder.Services.Configure<B2Setting>(builder.Configuration.GetSection("B2"));
 builder.Services.AddScoped<IUploadToCloud, UploadToBackBlaze>();
 builder.Services.AddScoped<IExamAIGenerator, ExamAIGenerator>();
 builder.Services.AddScoped<IMailService, MailService>();
+builder.Services.AddScoped<ITopicPerformanceService, PerformanceService>();
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 //Add mediatR
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Revisio.Application.IAssemblyMarker).Assembly));

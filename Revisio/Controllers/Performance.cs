@@ -6,8 +6,6 @@ using Revisio.Application.Performance.Query.Attendence;
 using Revisio.Application.Performance.Query.CourseTopicPERFORMANCE;
 using Revisio.Application.Performance.Query.ExamResult;
 using Revisio.Application.Performance.Query.WeakTopics;
-using System.Net.WebSockets;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace Revisio.API.Controllers
 {
     [Controller]
@@ -16,7 +14,7 @@ namespace Revisio.API.Controllers
     {
         private readonly IMediator mediator;
         public Performance (IMediator mediator) { this.mediator = mediator; }
-        [HttpGet("/course/{courseId}/topics")]
+        [HttpGet("course/{courseId}/topics")]
         [Authorize(Roles ="Student")]
         public async Task< IActionResult > CoursePerformance(Guid courseId)
         {

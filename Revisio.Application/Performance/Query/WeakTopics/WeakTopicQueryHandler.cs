@@ -9,44 +9,25 @@ namespace Revisio.Application.Performance.Query.WeakTopics
     {
         private readonly IAppDbContext context;
         private readonly ICurrentUserService userService;
-        public WeakTopicQueryHandler (IAppDbContext context, ICurrentUserService userService)
+        private readonly ITopicPerformanceService topicPerformanceService;
+        public WeakTopicQueryHandler (IAppDbContext context
+            , ICurrentUserService userService
+            ,ITopicPerformanceService topicPerformanceService)
         {
             this.userService = userService;
             this.context = context;
+            this.topicPerformanceService = topicPerformanceService;
         }
         public async Task<Response<WeakReviewDto>> Handle(WeakTopicQuery request, CancellationToken cancellationToken)
         {
-            var answers = await context.ExamSessionAnswers
-                 .Include(x => x.Questions)
-                   .ThenInclude(x => x.GenerationRequest )
-                 .Where(x => x.Questions.GenerationRequest.CourseId == request.CourseId &&
-                 x.Questions.GenerationRequest.UserId == userService.UserId
-                 && x.Questions.GenerationRequest.GenrateExamStatus == Domain.Enums.GenrateExamStatus.Completed)
-                 .Select(x => new
-                 {
-                     x.Questions.Topic,
-                     x.Questions.MaxScore,
-                     x.Score,
-                     x.Questions.Lectures.LecName
-                 }).ToListAsync(cancellationToken);
+            var response = await topicPerformanceService.TopicPerformance(request.CourseId, userService.UserId, cancellationToken);
 
-            var weakTopics = answers.GroupBy(x => new { x.LecName, x.Topic })
-                 .Select(g => new
-                 {
-                     g.Key.Topic,
-                     g.Key.LecName,
-                     Accuracy = g.Sum(x => x.MaxScore) > 0
-                         ? Math.Round(((decimal)g.Sum(x => x.Score) / g.Sum(x => x.MaxScore)) * 100, 0)
-                         : 0
-                 }).Where(x => x.Accuracy < 70)
-                 .OrderBy(x => x.Accuracy)
-                  .Select(x => new WeakTopicDto
-                  {
-                      Topic = x.Topic,
-                      LectureName = x.LecName,
-                      Accuracy = x.Accuracy,
-                      Status = x.Accuracy < 50 ? "Weak" : "Review"
-                  }).ToList();
+            var weakTopics = response.Select(x => new WeakTopicDto()
+            {
+                 Accuracy = x.Accuracy,
+                 LectureName = x.LectureName,
+                  Status = x.Accuracy<50?"Weak":"Review"
+            }).ToList();
             return new Response<WeakReviewDto>()
             {
                 Success = true,

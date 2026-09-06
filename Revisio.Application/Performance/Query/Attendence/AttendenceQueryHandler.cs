@@ -24,10 +24,10 @@ namespace Revisio.Application.Performance.Query.Attendence
                  .Select(x => new
                  {
                    studentStudent=  x.Score,
-                   questionAnswer = x.Questions.MaxScore
+                   questionScore = x.Questions.MaxScore
                  }).ToListAsync();
             var questionNum = scores.Count;
-            var accuracy = Math.Round((scores.Sum(x => x.studentStudent ?? 0) / scores.Sum(x => x.questionAnswer)) / 100, 2);
+            var accuracy = Math.Round((scores.Sum(x => x.studentStudent ?? 0) / scores.Sum(x => x.questionScore)) * 100, 2);
 
             var activityDates = await context.ExamSessionAnswers
                 .Include(x => x.ExamSession)

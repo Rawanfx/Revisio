@@ -13,5 +13,6 @@ namespace Revisio.Application.Performance.Dto
         public string LectureName { get; set; }
         public string Status { get; set; }
         public decimal Accuracy { get; set; }
+
     }
 }
