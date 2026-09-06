@@ -22,7 +22,9 @@ namespace Revisio.Application.Performance.Query.WeakTopics
         {
             var response = await topicPerformanceService.TopicPerformance(request.CourseId, userService.UserId, cancellationToken);
 
-            var weakTopics = response.Select(x => new WeakTopicDto()
+            var weakTopics = response
+                .Where(x=>x.Accuracy<70)
+                .Select(x => new WeakTopicDto()
             {
                  Accuracy = x.Accuracy,
                  LectureName = x.LectureName,

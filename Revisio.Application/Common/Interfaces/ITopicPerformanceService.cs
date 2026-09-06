@@ -4,6 +4,6 @@ namespace Revisio.Application.Common.Interfaces
 {
     public interface ITopicPerformanceService
     {
-        Task<TopicPerformanceDetail> TopicPerformance(Guid courseId, string userId,CancellationToken cancellationToken);
+        Task<List<TopicPerformanceDetail>> TopicPerformance(Guid courseId, string userId,CancellationToken cancellationToken);
     }
 }

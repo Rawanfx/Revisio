@@ -1,10 +1,8 @@
-﻿using Revisio.Application.Common.Interfaces;
+﻿using Google.Protobuf;
+using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
-using Revisio.Application.Events;
+using Revisio.Application.Performance.Dto;
 using Revisio.Application.Questions.Dto;
-using Revisio.Domain.Enums;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 namespace Revisio.Infrastructure.Services
 {
     public class ExamAIGenerator : IExamAIGenerator
@@ -13,6 +11,42 @@ namespace Revisio.Infrastructure.Services
         public ExamAIGenerator(ExamAIService.ExamAIServiceClient client){
             this.client = client;
             }
+
+        public async Task<GeneatePreExamSummaryDto> GeneratePreExamSummary(GeneratePreExamSummaryRequest dto,CancellationToken cancellationToken)
+        {
+            var request = new GenerateSummaryRequest()
+            {
+              CourseId = dto.course_id,
+            };
+            var weakTopics = dto.weak_topics.Select(x => new WeakTopic()
+            {
+                LectureId=x.lecture_id,
+                MissedCount=x.missed_count,
+                Topic=x.topic,
+                TotalAttempted=x.total_attempted
+            });
+            if (dto.weak_topics != null)
+            {
+                request.WeakTopics.AddRange(weakTopics);
+            }
+            var response = await client.pre_summaryAsync(request, cancellationToken: cancellationToken);
+            if (!response.Success)
+                 throw new Exception($"AI generation failed: {response.ErrorMessage}");
+            var reviews = response.Reviews.Select(x => new Revisio.Application.Performance.Dto. TopicReview()
+            {
+                focus_points=x.FocusPoints,
+                lecture_id=x.LectureId,
+                topic=x.Topic
+            }).ToList();
+            GeneatePreExamSummaryDto result = new GeneatePreExamSummaryDto()
+            {
+                success = response.Success,
+                reviews = reviews,
+                
+            };
+            return result;
+        }
+
         public async Task<GenerateQuestionsAIServiceResponseDto> GenerateQuestions(GenerateQuestionsAIServiceRequestDto dto, CancellationToken cancellationToken)
         {
             var request = new GenerateQuestionsRequest()

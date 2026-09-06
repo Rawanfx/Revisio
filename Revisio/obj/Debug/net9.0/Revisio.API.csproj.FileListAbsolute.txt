@@ -7,6 +7,7 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.sourcelink.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\appsettings.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.API.staticwebassets.runtime.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.API.staticwebassets.endpoints.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.API.exe
@@ -217,6 +218,7 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.Inf
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.Application.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.Infrastructure.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\Revisio.Domain.pdb
+C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
@@ -236,5 +238,3 @@ C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\refint\Revi
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.pdb
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.genruntimeconfig.cache
 C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\ref\Revisio.API.dll
-C:\Users\Techno Shield\source\repos\Revisio\Revisio\obj\Debug\net9.0\Revisio.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Techno Shield\source\repos\Revisio\Revisio\bin\Debug\net9.0\appsettings.json
