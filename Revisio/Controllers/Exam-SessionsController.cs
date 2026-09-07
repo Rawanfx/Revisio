@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Revisio.Application.ExplainMore.Dto;
+using Revisio.Application.ExplainMore.Query;
 using Revisio.Application.Performance.Query.ExamResult;
 
 namespace Revisio.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/exam-sessions")]
     [ApiController]
     public class ExamSessionsController
         : ControllerBase
@@ -16,11 +18,12 @@ namespace Revisio.API.Controllers
         {
             this.mediator = mediator;
         }
-        [HttpGet("{examSessionId}/result")]
+        [HttpPost("{examSessionId}/questions/{questionId}/explain")]
         [Authorize(Roles ="Student")]
-        public async Task<IActionResult> ExamResult ([FromRoute]ExamResultQuery query)
+        public async Task<IActionResult>SelectToExplain (Guid examSessionId,Guid questionId, [FromBody] ExplainSelectedTextRequest request)
         {
-           var response = await mediator.Send(query);
+            var query = new ExplainSelectedTextQuery(questionId, examSessionId, request.SelectedText);
+            var response = await mediator.Send(query);
             return Ok(response);
         }
     }
