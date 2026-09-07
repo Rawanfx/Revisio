@@ -57,6 +57,10 @@ public static partial class ExamAIService
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::GradeAnswerResponse> __Marshaller_GradeAnswerResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GradeAnswerResponse.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::ExplainConceptRequest> __Marshaller_ExplainConceptRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ExplainConceptRequest.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Marshaller<global::ExplainConceptResponse> __Marshaller_ExplainConceptResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ExplainConceptResponse.Parser));
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::GenerateSummaryRequest> __Marshaller_GenerateSummaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GenerateSummaryRequest.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::GenerateSummaryResponse> __Marshaller_GenerateSummaryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GenerateSummaryResponse.Parser));
@@ -84,6 +88,14 @@ public static partial class ExamAIService
       "GradeAnswer",
       __Marshaller_GradeAnswerRequest,
       __Marshaller_GradeAnswerResponse);
+
+  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+  static readonly grpc::Method<global::ExplainConceptRequest, global::ExplainConceptResponse> __Method_ExplainConcept = new grpc::Method<global::ExplainConceptRequest, global::ExplainConceptResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "ExplainConcept",
+      __Marshaller_ExplainConceptRequest,
+      __Marshaller_ExplainConceptResponse);
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Method<global::GenerateSummaryRequest, global::GenerateSummaryResponse> __Method_pre_summary = new grpc::Method<global::GenerateSummaryRequest, global::GenerateSummaryResponse>(
@@ -188,51 +200,67 @@ public static partial class ExamAIService
     }
     /// <summary>
     /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
-    /// rpc ExplainConcept (ExplainConceptRequest) returns (ExplainConceptResponse);
     /// </summary>
     /// <param name="request">The request to send to the server.</param>
     /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
     /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
     /// <param name="cancellationToken">An optional token for canceling the call.</param>
     /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::ExplainConceptResponse ExplainConcept(global::ExplainConceptRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ExplainConcept(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The response received from the server.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual global::ExplainConceptResponse ExplainConcept(global::ExplainConceptRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_ExplainConcept, null, options, request);
+    }
+    /// <summary>
+    /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+    /// <param name="cancellationToken">An optional token for canceling the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::ExplainConceptResponse> ExplainConceptAsync(global::ExplainConceptRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return ExplainConceptAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    /// <summary>
+    /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
+    /// </summary>
+    /// <param name="request">The request to send to the server.</param>
+    /// <param name="options">The options for the call.</param>
+    /// <returns>The call object.</returns>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public virtual grpc::AsyncUnaryCall<global::ExplainConceptResponse> ExplainConceptAsync(global::ExplainConceptRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_ExplainConcept, null, options, request);
+    }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual global::GenerateSummaryResponse pre_summary(global::GenerateSummaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return pre_summary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    /// <summary>
-    /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
-    /// rpc ExplainConcept (ExplainConceptRequest) returns (ExplainConceptResponse);
-    /// </summary>
-    /// <param name="request">The request to send to the server.</param>
-    /// <param name="options">The options for the call.</param>
-    /// <returns>The response received from the server.</returns>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual global::GenerateSummaryResponse pre_summary(global::GenerateSummaryRequest request, grpc::CallOptions options)
     {
       return CallInvoker.BlockingUnaryCall(__Method_pre_summary, null, options, request);
     }
-    /// <summary>
-    /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
-    /// rpc ExplainConcept (ExplainConceptRequest) returns (ExplainConceptResponse);
-    /// </summary>
-    /// <param name="request">The request to send to the server.</param>
-    /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-    /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-    /// <param name="cancellationToken">An optional token for canceling the call.</param>
-    /// <returns>The call object.</returns>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual grpc::AsyncUnaryCall<global::GenerateSummaryResponse> pre_summaryAsync(global::GenerateSummaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return pre_summaryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    /// <summary>
-    /// rpc GradeImageAnswer (GradeImageAnswerRequest) returns (GradeAnswerResponse);
-    /// rpc ExplainConcept (ExplainConceptRequest) returns (ExplainConceptResponse);
-    /// </summary>
-    /// <param name="request">The request to send to the server.</param>
-    /// <param name="options">The options for the call.</param>
-    /// <returns>The call object.</returns>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual grpc::AsyncUnaryCall<global::GenerateSummaryResponse> pre_summaryAsync(global::GenerateSummaryRequest request, grpc::CallOptions options)
     {

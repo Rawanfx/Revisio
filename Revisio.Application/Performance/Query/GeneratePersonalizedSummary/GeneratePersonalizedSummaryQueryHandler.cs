@@ -20,12 +20,13 @@ namespace Revisio.Application.Performance.Query.GeneratePersonalizedSummary
         public async Task<Response<GeneatePreExamSummaryDto>> Handle(GeneratePersonalizedSummaryQuery request, CancellationToken cancellationToken)
         {
             var allTopics = await topicPerformanceService.TopicPerformance(request.CourseId, userService.UserId, cancellationToken);
+            allTopics = allTopics.Where(x => x.Accuracy < 70).ToList();
 
             if (!allTopics.Any())
                 return new Response<GeneatePreExamSummaryDto>() { Success = true, Message = "No Mistacks!" };
             var weakTopics = allTopics.Select(x => new WeakTopic()
             {
-                lecture_id=x.LectureName,
+                lecture_id=x.LectureId.ToString(),
                 missed_count=x.MissedCount,
                 topic=x.Topic,
                   total_attempted=x.TotalAttempted

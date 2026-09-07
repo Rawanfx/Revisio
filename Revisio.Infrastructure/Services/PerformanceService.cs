@@ -25,12 +25,13 @@ namespace Revisio.Infrastructure.Services
                   x.Questions.Topic,
                   x.Questions.MaxScore,
                   Score = x.Score ?? 0,
-                  x.Questions.Lectures.LecName
+                  x.Questions.Lectures.LecName,
+                  x.Questions.LectureId
               })
               .ToListAsync(cancellationToken);
 
             return answers
-                .GroupBy(x => new { x.LecName, x.Topic })
+                .GroupBy(x => new { x.LecName, x.Topic})
                 .Select(g => new TopicPerformanceDetail
                 {
                     Topic = g.Key.Topic,
@@ -39,7 +40,8 @@ namespace Revisio.Infrastructure.Services
                         ? Math.Round((g.Sum(x => x.Score) / g.Sum(x => x.MaxScore)) * 100, 0)
                         : 0,
                     MissedCount = g.Count(x => x.Score < x.MaxScore),
-                    TotalAttempted = g.Count()
+                    TotalAttempted = g.Count(),
+                    LectureId=g.Select(x=>x.LectureId).FirstOrDefault()??Guid.Empty
                 })
                 .OrderBy(x => x.Accuracy)
                 .ToList();

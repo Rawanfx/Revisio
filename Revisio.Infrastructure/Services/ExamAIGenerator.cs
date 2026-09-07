@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf;
 using Revisio.Application.Common.Interfaces;
 using Revisio.Application.Common.Models;
+using Revisio.Application.ExplainMore.Dto;
 using Revisio.Application.Performance.Dto;
 using Revisio.Application.Questions.Dto;
 namespace Revisio.Infrastructure.Services
@@ -11,6 +12,24 @@ namespace Revisio.Infrastructure.Services
         public ExamAIGenerator(ExamAIService.ExamAIServiceClient client){
             this.client = client;
             }
+
+        public async Task<ExplainTextResponse> GenerateExplainText(string lecture_id, string selected_text, string question_text,CancellationToken cancellationToken)
+        {
+            var request = new ExplainConceptRequest()
+            {
+                LectureId = lecture_id,
+                QuestionText = question_text,
+                SelectedText = selected_text
+            };
+            var response = await client.ExplainConceptAsync(request, cancellationToken: cancellationToken);
+            if (!response.Success)
+                throw new Exception($"AI generation failed: {response.ErrorMessage}");
+            return new ExplainTextResponse()
+            {
+                Exlaination = response.Explanation,
+                RealExample = response.RealExample
+            };
+        }
 
         public async Task<GeneatePreExamSummaryDto> GeneratePreExamSummary(GeneratePreExamSummaryRequest dto,CancellationToken cancellationToken)
         {
