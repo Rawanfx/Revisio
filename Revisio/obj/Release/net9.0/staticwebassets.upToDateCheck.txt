@@ -1,6 +1,0 @@
-D:\repos\Revisio\Revisio\wwwroot\Templets\ResetPassword.html
-D:\repos\Revisio\Revisio\wwwroot\Templets\ConfirmationEmail.html
-D:\repos\Revisio\Revisio\wwwroot\Templets\ResetPasswordPage.html
-wwwroot\Templets\ConfirmationEmail.html
-wwwroot\Templets\ResetPassword.html
-wwwroot\Templets\ResetPasswordPage.html
