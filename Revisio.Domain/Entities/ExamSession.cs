@@ -19,7 +19,7 @@ namespace Revisio.Domain.Entities
         public int TotalQuestions { get; set; }
         public int CorrectAnswersCount { get; set; }
         public DateTime CompletedAt { get; set; }
-        public ICollection<ExamSessionAnswer> ExamSessionAnswers => new List<ExamSessionAnswer>();
+        public ICollection<ExamSessionAnswer> ExamSessionAnswers = new List<ExamSessionAnswer>();
         public decimal TotalMaxScore { get; set; }
     }
 }

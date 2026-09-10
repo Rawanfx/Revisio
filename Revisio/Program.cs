@@ -125,15 +125,7 @@ builder.Services.AddSingleton<IAmazonS3>(sp =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUserService, CurrentUser>();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("Allow",policy =>
-    {
-        policy.AllowAnyHeader();
-        policy.AllowAnyMethod();
-        policy.AllowAnyOrigin();
-    });
-});
+
 builder.Services.AddRateLimiter(options => {
     options.AddFixedWindowLimiter("fixed", w =>
     {
@@ -161,7 +153,6 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseCors("Allow");
 app.UseRateLimiter();
 app.UseAuthentication(); 
 app.UseAuthorization();
