@@ -1,14 +1,19 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Revisio.Application.Auth.Command.ConfirmEmail;
 using Revisio.Application.Auth.Command.ForgetAndResetPassword;
+using Revisio.Application.Auth.Command.GoogleLogin;
 using Revisio.Application.Auth.Command.Login;
 using Revisio.Application.Auth.Command.RefreshTokens;
 using Revisio.Application.Auth.Command.Register;
 using Revisio.Application.Auth.Command.ResendConfirmEmail;
 using Revisio.Domain.Entities;
+using System.Security.Claims;
 
 namespace Revisio.API.Controllers
 {
@@ -70,5 +75,6 @@ namespace Revisio.API.Controllers
             var response = await _mediator.Send(command);
             return Ok(response);
         }
+       
     }
 }

@@ -2,8 +2,11 @@ using Amazon.S3;
 using FluentValidation;
 using MassTransit;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +26,7 @@ using Revisio.Infrastructure.Settings;
 using Serilog;
 using System.Reflection;
 using System.Text.Json.Serialization;
+using static UglyToad.PdfPig.DocumentLayoutAnalysis.TextExtractor.ContentOrderTextExtractor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -84,6 +88,34 @@ builder.Services.AddGrpcClient<ExamAIService.ExamAIServiceClient>(o =>
 {
     o.Address = new Uri(builder.Configuration["AIService:Address"]!);
 });
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
+    options.OnAppendCookie = cookieContext =>
+        cookieContext.CookieOptions.SameSite = SameSiteMode.Unspecified;
+    options.OnDeleteCookie = cookieContext =>
+        cookieContext.CookieOptions.SameSite = SameSiteMode.Unspecified;
+});
+//google auth
+GoogleAuth googleAuth = builder.Configuration.GetSection("Authentication:Google").Get<GoogleAuth>();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+}).AddCookie(options =>
+{
+    options.Cookie.Name = "ExternalAuthCookie";
+    options.Cookie.SameSite = SameSiteMode.Lax;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // إجبار الحماية عبر HTTPS
+    options.Cookie.HttpOnly = true;
+})
+    .AddGoogle(x =>
+    {
+        x.ClientId = googleAuth.ClientId;
+        x.ClientSecret = googleAuth.ClientSecret;
+        x.CallbackPath = "/signin-google";
+        x.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme; // تحديد صريح لنظام الكوكي
+    });
 //add rabbitMq
 builder.Services.AddMassTransit(x =>
 {
@@ -153,6 +185,7 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseRouting();
 app.UseRateLimiter();
 app.UseAuthentication(); 
 app.UseAuthorization();

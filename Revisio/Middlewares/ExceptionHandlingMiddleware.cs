@@ -39,7 +39,7 @@ namespace Revisio.API.Middlewares
             RepeatException exception => (Response<object>.FailResponse(ex.Message)
                 , StatusCodes.Status400BadRequest),
 
-                _ => (Response<object>.FailResponse("An Error Occured"), StatusCodes.Status500InternalServerError)
+                _ => (Response<object>.FailResponse(ex.Message + " -- "+ex.InnerException), StatusCodes.Status500InternalServerError)
             };
             response.Success = false;
             context.Response.StatusCode = statusCode;
